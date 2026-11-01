@@ -1,3 +1,8 @@
 node_modules/
 dist/
 *.local
+
+/CarbonTrace-Update-2026-10-26.zip
+/src/assets/sample_audio.mpeg
+/docs/*
+!/docs/CarbonTrace-GENIUS-AI-Research-Paper v2.pdf

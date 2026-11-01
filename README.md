@@ -188,7 +188,7 @@ Reload the page after retraining. The model directory retains the checkpoint sou
 - Each estimated record snapshots its factors, source, scope, date, set ID, and set name. Changing/clearing preferences does not rewrite history. Versioned r1 presets retain immutable reference identity; their numbers cannot be edited while keeping preset identity.
 - Summaries distinguish missing estimates from valid zero results and show factor coverage. Incompatible material/reference bases remain separate; there is no cross-basis CO2e total.
 
-Original numbers, conversions, assumptions, use cases, and references are documented in the [Emission parameter guide](docs/Parameter-Set-Emisi.md). Indonesian Markdown and Word guides are downloadable from Emission parameters.
+Original numbers, conversions, assumptions, use cases, and references are documented in the [Emission parameter guide](src/assets/guides/Parameter-Set-Emisi.md). Indonesian Markdown and Word guides are bundled as application assets and downloadable from Emission parameters.
 
 ### Storage and demonstration archives
 
@@ -216,7 +216,7 @@ The script preserves aspect ratios, validates display-size limits, and checks th
 
 **User-provided photo** identifies the declared file origin, not authenticated material or photo content. Labels for the 120 formal photos are internal references; record material still requires human confirmation.
 
-The [132-photo example-weight workbook](docs/CarbonTrace-Contoh-Berat-132-Foto.xlsx) follows the application's 78 training and 54 test-menu photos, with per-ID thumbnails and links. Previous 88-photo values are retained. The 44 drywall catalog examples use an assumed 1,000 g per target group, not an image-derived or measured weight. Measured-mass cells remain empty. Example weights do not train the classifier or count as paper observations. The [88-photo workbook](docs/CarbonTrace-Contoh-Berat-88-Foto.xlsx) and [48-photo workbook](docs/CarbonTrace-Contoh-Berat-48-Foto.xlsx) are archives.
+The companion 132-photo example-weight workbook is kept locally, outside this repository. It follows the application's 78 training and 54 test-menu photos, with per-ID thumbnails and links. Previous 88-photo values are retained. The 44 drywall catalog examples use an assumed 1,000 g per target group, not an image-derived or measured weight. Measured-mass cells remain empty. Example weights do not train the classifier or count as paper observations. The earlier 88-photo and 48-photo workbooks are also kept locally as archives.
 
 Catalog display photos are published with a deployed application. Check that they contain no addresses, phone numbers, or other private information before publication.
 
@@ -242,11 +242,15 @@ For uploads, `sample_name` is the original filename, `current_sample_image_file`
 
 Archives export in the earlier format with explicit demonstration status and never mix into active CSV. Catalog-image fields describe the catalog at export time, not proof of the historical photo. Image-content, treatment, and credit-issuance verification stay `NO`.
 
-The [Word usage guide](docs/CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx) is available in Indonesian.
+The [Word usage guide](src/assets/guides/CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx) is available in Indonesian as a bundled application asset.
 
-The research paper is available as [submission PDF](docs/CarbonTrace-GENIUS-AI-Research-Paper.pdf) and [Word](docs/CarbonTrace-GENIUS-AI-Research-Paper.docx). It uses model `ct-mobilenet-913cfe5aa706` and a single 42-photo matrix, with first-time/regression history documented as a limitation. Factor guidance follows per-material defaults and optional estimation. The exploratory CT-009 failure remains outside formal accuracy. Excel weights remain examples. Deploy the current build before submission so the hosted model-report links match.
+The research paper is available as the [v2 submission PDF](<docs/CarbonTrace-GENIUS-AI-Research-Paper v2.pdf>). It uses model `ct-mobilenet-913cfe5aa706` and a single 42-photo matrix, with first-time/regression history documented as a limitation. Factor guidance follows per-material defaults and optional estimation. The exploratory CT-009 failure remains outside formal accuracy. Excel weights remain examples. Deploy the current build before submission so the hosted model-report links match.
 
-The [Scout video-production prompt](docs/CarbonTrace-Prompt-Microsoft-Scout-Video-Submission.txt) follows the three-class model, 132-photo workbook, and current evaluation scope. The two demonstrations focus on PET/cardboard. Its revised body target is approximately 124-130 seconds, with one spoken example-weight explanation and no permanent demo label. This text is production guidance, not a rendered video or evidence that a voice sample was processed.
+The Scout video-production prompt and recordings are kept locally, outside this repository. The prompt follows the three-class model, 132-photo workbook, and current evaluation scope. The two demonstrations focus on PET/cardboard. Its revised body target is approximately 124-130 seconds, with one spoken example-weight explanation and no permanent demo label. The prompt is production guidance, not a rendered video or evidence that a voice sample was processed.
+
+### Repository contents
+
+The repository includes only the v2 submission PDF under `docs`. Other local documents, workbooks, recordings, deployment ZIPs, and the voice sample `src/assets/sample_audio.mpeg` are excluded from Git. The two guides required by the application are included under [src/assets/guides](src/assets/guides), so a fresh clone can build the application and retain both download options. Excluded files remain on the author's computer; they are not inputs required for training or building this repository.
 
 ### Further development
 
@@ -438,7 +442,7 @@ Setelah melatih ulang, muat ulang halaman agar model baru dimuat. Sumber checkpo
 - Setiap catatan menyimpan salinan faktor, sumber, konteks, waktu, ID set, dan nama set. Mengubah atau mengosongkan pengaturan tidak mengubah catatan lama otomatis. ID preset berversi r1 menjaga identitas rujukan historis; nilai rujukan tidak dapat diedit sambil mempertahankan identitas preset.
 - Ringkasan membedakan catatan dengan faktor dari estimasi yang belum tersedia, serta hasil sah bernilai nol. Basis material/rujukan yang tidak sesuai tetap dipisahkan; tidak ada total CO2e lintas basis.
 
-Dokumentasi angka asli, konversi, asumsi, kegunaan, dan rujukan masing-masing set terdapat di [Parameter Set Emisi](docs/Parameter-Set-Emisi.md). Panduan Markdown dan Word juga dapat diunduh melalui panel parameter di aplikasi.
+Dokumentasi angka asli, konversi, asumsi, kegunaan, dan rujukan masing-masing set terdapat di [Parameter Set Emisi](src/assets/guides/Parameter-Set-Emisi.md). Panduan Markdown dan Word disertakan sebagai aset aplikasi dan dapat diunduh melalui panel parameter.
 
 ### Penyimpanan dan arsip
 
@@ -466,7 +470,7 @@ Script mempertahankan rasio gambar, memeriksa batas ukuran tampilan, dan memasti
 
 Label **Foto pengguna** menyatakan asal file, bukan jaminan keaslian atau bahan. Label 120 foto formal adalah referensi internal; kategori catatan tetap dikonfirmasi pengguna.
 
-[Tabel contoh berat 132 foto](docs/CarbonTrace-Contoh-Berat-132-Foto.xlsx) mengikuti 78 training dan 54 test pada aplikasi, dengan thumbnail dan tautan per ID. Seluruh nilai 88 foto sebelumnya dipertahankan. Tambahan 44 drywall memakai **contoh/asumsi 1.000 g per kelompok target**, bukan estimasi dari gambar atau hasil timbang. Kolom hasil ukur tetap kosong. Angka contoh tidak dipakai melatih classifier atau menjadi observasi paper. [Workbook 88 foto](docs/CarbonTrace-Contoh-Berat-88-Foto.xlsx) dan [workbook 48 foto](docs/CarbonTrace-Contoh-Berat-48-Foto.xlsx) adalah arsip.
+Tabel contoh berat 132 foto disimpan lokal, di luar repository ini. Isinya mengikuti 78 training dan 54 test pada aplikasi, dengan thumbnail dan tautan per ID. Seluruh nilai 88 foto sebelumnya dipertahankan. Tambahan 44 drywall memakai **contoh/asumsi 1.000 g per kelompok target**, bukan estimasi dari gambar atau hasil timbang. Kolom hasil ukur tetap kosong. Angka contoh tidak dipakai melatih classifier atau menjadi observasi paper. Workbook 88 foto dan 48 foto juga disimpan lokal sebagai arsip.
 
 Foto tampilan akan ikut dipublikasikan jika aplikasi dideploy. Pastikan tidak ada alamat, nomor telepon, atau informasi pribadi sebelum publikasi.
 
@@ -492,11 +496,15 @@ Untuk unggahan, `sample_name` menyimpan nama file asli, `current_sample_image_fi
 
 Ekspor arsip menggunakan format versi sebelumnya dan tetap menandai datanya sebagai contoh. Arsip tidak tercampur ke CSV aktif. Kolom foto katalog menjelaskan katalog saat ekspor, bukan bukti foto historis. Verifikasi isi gambar, pengolahan, dan penerbitan kredit tetap `NO`.
 
-Panduan Word terdapat di [dokumen penggunaan](docs/CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx).
+Panduan Word tersedia sebagai aset aplikasi di [dokumen penggunaan](src/assets/guides/CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx).
 
-Paper tersedia sebagai [PDF submission](docs/CarbonTrace-GENIUS-AI-Research-Paper.pdf) dan [Word](docs/CarbonTrace-GENIUS-AI-Research-Paper.docx). Model tetap `ct-mobilenet-913cfe5aa706`, dengan satu matrix 42 foto serta riwayat evaluasi baru/regresi pada bagian batasan. Dokumentasi alur faktor diselaraskan dengan default/per-material/opsi tanpa estimasi. Kesalahan CT-009 eksplorasi tetap dilaporkan di luar akurasi formal. Nilai berat Excel tetap contoh. Unggah build terbaru sebelum submission agar tautan laporan model sesuai dengan hosting.
+Paper tersedia sebagai [PDF submission v2](<docs/CarbonTrace-GENIUS-AI-Research-Paper v2.pdf>). Model tetap `ct-mobilenet-913cfe5aa706`, dengan satu matrix 42 foto serta riwayat evaluasi baru/regresi pada bagian batasan. Dokumentasi alur faktor diselaraskan dengan default/per-material/opsi tanpa estimasi. Kesalahan CT-009 eksplorasi tetap dilaporkan di luar akurasi formal. Nilai berat Excel tetap contoh. Unggah build terbaru sebelum submission agar tautan laporan model sesuai dengan hosting.
 
-[Prompt produksi video Scout](docs/CarbonTrace-Prompt-Microsoft-Scout-Video-Submission.txt) telah diselaraskan dengan model tiga kelas, workbook 132 foto dan pembagian uji saat ini. Fokus dua demo tetap PET/kardus. Target durasi bagian utama revisi sekitar 124-130 detik, dengan satu penjelasan narasi tentang contoh berat dan tanpa label demo permanen. File ini adalah instruksi produksi, bukan video atau bukti pemrosesan suara.
+Prompt produksi video Scout dan rekaman disimpan lokal, di luar repository ini. Prompt mengikuti model tiga kelas, workbook 132 foto dan pembagian uji saat ini. Fokus dua demo tetap PET/kardus. Target durasi bagian utama revisi sekitar 124-130 detik, dengan satu penjelasan narasi tentang contoh berat dan tanpa label demo permanen. Prompt adalah instruksi produksi, bukan video atau bukti pemrosesan suara.
+
+### Isi repository
+
+Dalam `docs`, hanya PDF submission v2 yang disertakan di repository. Dokumen lokal lainnya, workbook, rekaman, ZIP deployment, dan sampel suara `src/assets/sample_audio.mpeg` dikecualikan dari Git. Dua panduan yang dibutuhkan aplikasi tersedia di [src/assets/guides](src/assets/guides), sehingga clone baru tetap dapat dibuild dan memiliki kedua pilihan unduhan. File yang dikecualikan tetap ada pada komputer penulis dan tidak diperlukan untuk pelatihan atau build repository ini.
 
 ### Pengembangan berikutnya
 

@@ -14,6 +14,22 @@ test("five distinct menu views retain existing deep-link routes", () => {
   assert.equal(viewFromHash("#unknown"), null);
 });
 
+test("both guide downloads use repository-contained app assets rather than excluded local documents", () => {
+  const app = readFileSync(new URL("../src/app.ts", import.meta.url), "utf8");
+  const guides = [
+    "Parameter-Set-Emisi.md",
+    "CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx",
+  ];
+  for (const filename of guides) {
+    assert.ok(app.includes(`from "./assets/guides/${filename}?url"`));
+    const content = readFileSync(new URL(`../src/assets/guides/${filename}`, import.meta.url));
+    assert.ok(content.length > 0);
+    if (filename.endsWith(".md")) assert.ok(content.toString("utf8").includes("WARM"));
+    else assert.deepEqual([...content.subarray(0, 4)], [0x50, 0x4b, 0x03, 0x04]);
+  }
+  assert.equal(app.includes('from "../docs/'), false);
+});
+
 test("all material selectors and overview mass controls include drywall without changing the recording steps", () => {
   const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
   for (const id of ["category-confirmation", "factor-material", "material-filter"]) {

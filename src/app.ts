@@ -1,6 +1,6 @@
 import "./styles.css";
-import parameterGuideUrl from "../docs/Parameter-Set-Emisi.md?url";
-import parameterWordUrl from "../docs/CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx?url";
+import parameterGuideUrl from "./assets/guides/Parameter-Set-Emisi.md?url";
+import parameterWordUrl from "./assets/guides/CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx?url";
 import {
   CATALOG_SAMPLES, MATERIALS, STORAGE_KEY, ValidationError,
   compareScenario, exportCsv as exportArchiveCsv, getSample, isMaterial, parseWeight, sortCatalogSamples,
