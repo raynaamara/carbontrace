@@ -246,11 +246,9 @@ The [Word usage guide](src/assets/guides/CarbonTrace-Skenario-dan-Panduan-Penggu
 
 The research paper is available as the [v2 submission PDF](<docs/CarbonTrace-GENIUS-AI-Research-Paper v2.pdf>). It uses model `ct-mobilenet-913cfe5aa706` and a single 42-photo matrix, with first-time/regression history documented as a limitation. Factor guidance follows per-material defaults and optional estimation. The exploratory CT-009 failure remains outside formal accuracy. Excel weights remain examples. Deploy the current build before submission so the hosted model-report links match.
 
-The Scout video-production prompt and recordings are kept locally, outside this repository. The prompt follows the three-class model, 132-photo workbook, and current evaluation scope. The two demonstrations focus on PET/cardboard. Its revised body target is approximately 124-130 seconds, with one spoken example-weight explanation and no permanent demo label. The prompt is production guidance, not a rendered video or evidence that a voice sample was processed.
-
 ### Repository contents
 
-The repository includes only the v2 submission PDF under `docs`. Other local documents, workbooks, recordings, deployment ZIPs, and the voice sample `src/assets/sample_audio.mpeg` are excluded from Git. The two guides required by the application are included under [src/assets/guides](src/assets/guides), so a fresh clone can build the application and retain both download options. Excluded files remain on the author's computer; they are not inputs required for training or building this repository.
+The repository includes only the v2 submission PDF under `docs`. Additional local documents and deployment packages are excluded from Git. The two guides required by the application are included under [src/assets/guides](src/assets/guides), so a fresh clone can build the application and retain both download options. Excluded files remain on the author's computer; they are not inputs required for training or building this repository.
 
 ### Further development
 
@@ -500,11 +498,9 @@ Panduan Word tersedia sebagai aset aplikasi di [dokumen penggunaan](src/assets/g
 
 Paper tersedia sebagai [PDF submission v2](<docs/CarbonTrace-GENIUS-AI-Research-Paper v2.pdf>). Model tetap `ct-mobilenet-913cfe5aa706`, dengan satu matrix 42 foto serta riwayat evaluasi baru/regresi pada bagian batasan. Dokumentasi alur faktor diselaraskan dengan default/per-material/opsi tanpa estimasi. Kesalahan CT-009 eksplorasi tetap dilaporkan di luar akurasi formal. Nilai berat Excel tetap contoh. Unggah build terbaru sebelum submission agar tautan laporan model sesuai dengan hosting.
 
-Prompt produksi video Scout dan rekaman disimpan lokal, di luar repository ini. Prompt mengikuti model tiga kelas, workbook 132 foto dan pembagian uji saat ini. Fokus dua demo tetap PET/kardus. Target durasi bagian utama revisi sekitar 124-130 detik, dengan satu penjelasan narasi tentang contoh berat dan tanpa label demo permanen. Prompt adalah instruksi produksi, bukan video atau bukti pemrosesan suara.
-
 ### Isi repository
 
-Dalam `docs`, hanya PDF submission v2 yang disertakan di repository. Dokumen lokal lainnya, workbook, rekaman, ZIP deployment, dan sampel suara `src/assets/sample_audio.mpeg` dikecualikan dari Git. Dua panduan yang dibutuhkan aplikasi tersedia di [src/assets/guides](src/assets/guides), sehingga clone baru tetap dapat dibuild dan memiliki kedua pilihan unduhan. File yang dikecualikan tetap ada pada komputer penulis dan tidak diperlukan untuk pelatihan atau build repository ini.
+Dalam `docs`, hanya PDF submission v2 yang disertakan di repository. Dokumen lokal tambahan dan paket deployment dikecualikan dari Git. Dua panduan yang dibutuhkan aplikasi tersedia di [src/assets/guides](src/assets/guides), sehingga clone baru tetap dapat dibuild dan memiliki kedua pilihan unduhan. File yang dikecualikan tetap ada pada komputer penulis dan tidak diperlukan untuk pelatihan atau build repository ini.
 
 ### Pengembangan berikutnya
 
