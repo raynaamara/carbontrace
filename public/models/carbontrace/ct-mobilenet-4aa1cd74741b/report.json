@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "version": "ct-mobilenet-4aa1cd74741b",
+  "trainedAt": "2026-10-24T05:10:27.778Z",
+  "featureSize": 256,
+  "trainIds": [
+    "SYN-PET-001",
+    "SYN-PET-002",
+    "SYN-PET-003",
+    "SYN-PET-004",
+    "SYN-PET-005",
+    "SYN-PET-006",
+    "SYN-PET-007",
+    "SYN-PET-008",
+    "SYN-CRD-001",
+    "SYN-CRD-002",
+    "SYN-CRD-003",
+    "SYN-CRD-004",
+    "SYN-CRD-005",
+    "SYN-CRD-006",
+    "SYN-CRD-007",
+    "SYN-CRD-008"
+  ],
+  "testIds": [
+    "SYN-PET-009",
+    "SYN-PET-010",
+    "SYN-CRD-009",
+    "SYN-CRD-010"
+  ],
+  "correct": 4,
+  "accuracy": 1,
+  "headSha256": "4aa1cd74741b87763b2448908fa2d1113bd31dc9139c4a85b8ad7cbe9306f229",
+  "backboneSha256": "476ce0dbdfa7f9872f0dda21479d8d4c8ccb279c6cdba1401b3e51242a0eb767",
+  "sourceDeclaration": "Pengguna menyatakan bahwa 20 gambar adalah foto barang nyata dan setiap ID merupakan sampel berbeda.",
+  "independentlyVerified": false,
+  "declaration": {
+    "source": "user-provided-photographs",
+    "statement": "Pengguna menyatakan bahwa 20 gambar adalah foto barang nyata dan setiap ID merupakan sampel berbeda.",
+    "independentlyVerified": false,
+    "declaredDate": "2026-10-24"
+  },
+  "architecture": "Frozen ImageNet MobileNetV1 0.25 + global average pooling + L2-normalized features + trained two-class softmax head",
+  "preprocessing": "RGB, bilinear 224x224 with aligned corners, pixel / 127.5 - 1, global average pooling, L2 normalization",
+  "training": {
+    "backboneUrl": "https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json",
+    "featureLayer": "conv_pw_13_relu",
+    "imageSize": 224,
+    "epochs": 200,
+    "learningRate": 0.03,
+    "l2": 0.001,
+    "seed": 20261024,
+    "labels": [
+      "pet",
+      "cardboard"
+    ],
+    "trainableParameters": 514,
+    "sourceImages": 16,
+    "augmentedExamples": 64,
+    "variants": [
+      "original",
+      "horizontal flip",
+      "brightness x0.9",
+      "brightness x1.1"
+    ],
+    "shuffle": false,
+    "lastLoss": 0.09169689565896988,
+    "validationSet": "No separate validation set; hyperparameters fixed before evaluating held-out images."
+  },
+  "samples": [
+    {
+      "id": "SYN-PET-001",
+      "material": "pet",
+      "imageFile": "SYN-PET-001.png",
+      "role": "train",
+      "originalSha256": "93fa2ceb2c927044d854eef4b49c82838c4a6a8f136a135d4537bf0ac6ee2d60",
+      "displaySha256": "9862d0a6512135a228dce832643aa5fd01478df07f2682ed703dcb5b5f2cd97c"
+    },
+    {
+      "id": "SYN-PET-002",
+      "material": "pet",
+      "imageFile": "SYN-PET-002.png",
+      "role": "train",
+      "originalSha256": "1fcf04af22b67bca568a554f2396089c90c203722748fdcf82cd6fb73196b872",
+      "displaySha256": "56c4448061c5e5ec071c2cfb66fabc1220beacd6a90c12613a6cacadc0330889"
+    },
+    {
+      "id": "SYN-PET-003",
+      "material": "pet",
+      "imageFile": "SYN-PET-003.png",
+      "role": "train",
+      "originalSha256": "a707dda86e89f5d7a2e3e949b246dc3c928dadb0fa7225aa0e9167aa2d98abf7",
+      "displaySha256": "cbc2043cb0be560234b3c3abc5ba85567a6e3554d503a619a50bcf76cb404059"
+    },
+    {
+      "id": "SYN-PET-004",
+      "material": "pet",
+      "imageFile": "SYN-PET-004.png",
+      "role": "train",
+      "originalSha256": "6db7c874c096c4fd8bb44684955ee0c2d49f7f59205ac1e8b1ea3fa7413118f7",
+      "displaySha256": "9cab4dc44be979da7d8e8e73dda512f90d239ef2d077a1b231025e07c4e78130"
+    },
+    {
+      "id": "SYN-PET-005",
+      "material": "pet",
+      "imageFile": "SYN-PET-005.png",
+      "role": "train",
+      "originalSha256": "afcf9bb151b75a169d161d7e6ac9d6c00599c55d2dac793831dcc61c429dd01c",
+      "displaySha256": "410dcbfe30aa403f5acf7913f756fe5d7e3af299d4de8bb9143aef0bd87a37dd"
+    },
+    {
+      "id": "SYN-PET-006",
+      "material": "pet",
+      "imageFile": "SYN-PET-006.png",
+      "role": "train",
+      "originalSha256": "398d533d07c859804a4a78b602b454bcd60a084d39f06ac085262ce910cc61a4",
+      "displaySha256": "71b97a992023a60efb98a2b00cb96c63a20408a545b0a7637637004ec46c7295"
+    },
+    {
+      "id": "SYN-PET-007",
+      "material": "pet",
+      "imageFile": "SYN-PET-007.png",
+      "role": "train",
+      "originalSha256": "cd2f4c186c456d4f47bd629322c09a7eb4386da6e9878bb30bc4f14d642fa581",
+      "displaySha256": "0c7dca976ffc17b3d6f9eaad834ba84e890779d2dcf8d094e2221528f8a1f923"
+    },
+    {
+      "id": "SYN-PET-008",
+      "material": "pet",
+      "imageFile": "SYN-PET-008.png",
+      "role": "train",
+      "originalSha256": "fa2b1721af7b8d29c6773eb68a081a477ddabd4f63ca7ac8489b2308a7917c57",
+      "displaySha256": "86de1ad76d4a1abc24222f34975b78c3ce2c0efa01273115635e192273e843f6"
+    },
+    {
+      "id": "SYN-PET-009",
+      "material": "pet",
+      "imageFile": "SYN-PET-009.png",
+      "role": "test",
+      "originalSha256": "781d11193547d1dd3e6b9cda5d510b249dc35d0df36dd2c8e17b0c3b7c6d8a3f",
+      "displaySha256": "bb366a7572684ed97132caae0b5cd353e86201f5bdc2b4603862ecd165ba9c81"
+    },
+    {
+      "id": "SYN-PET-010",
+      "material": "pet",
+      "imageFile": "SYN-PET-010.png",
+      "role": "test",
+      "originalSha256": "961364976bc117719d12351534cb23a73e7eec90ec0455fe243d8f387ad5069f",
+      "displaySha256": "c13f0898228bf72a1a7f9b2246965aa8f3e8c520030a0f3a2c381e56a0b05e78"
+    },
+    {
+      "id": "SYN-CRD-001",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-001.png",
+      "role": "train",
+      "originalSha256": "de29410233426571e240a63ca597ad8d1b258807047342e8638415c5c224c690",
+      "displaySha256": "827a7f338b8b75ba49078a60efeaa2963f6c03a7577dd3448d86ecaa9d9ee062"
+    },
+    {
+      "id": "SYN-CRD-002",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-002.png",
+      "role": "train",
+      "originalSha256": "66c4ecd422fbfdc0f42b03658c89b6143b5964b919947c6f20a5fdf0011da8e5",
+      "displaySha256": "a0e1fd155e9abd937f6eaea8ff403dd447d606f5411af255fc9f05f33ba057ec"
+    },
+    {
+      "id": "SYN-CRD-003",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-003.png",
+      "role": "train",
+      "originalSha256": "4b43b458f5a484133dfc96ae9668bdbc8a12a428dc3fea4adb9201ebc467f3d4",
+      "displaySha256": "2a3283b64ba29d0739bc1afc92a34ca47bccf60a17818bf88dae7d6f994dfd30"
+    },
+    {
+      "id": "SYN-CRD-004",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-004.png",
+      "role": "train",
+      "originalSha256": "6955e154b47d6097f7d9a502151487bfb1b9ead842443dfb796c78ca115bb188",
+      "displaySha256": "d653eefcdc92e59633d1b97d413b021fd27a1027cb15f60a52c06572221128ea"
+    },
+    {
+      "id": "SYN-CRD-005",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-005.png",
+      "role": "train",
+      "originalSha256": "9daaf833fd5bd5637f6261308d1e8a4d3bf1d9b079495a80be96e162a76cd953",
+      "displaySha256": "3f8a4f370675cfdfbbf4acb7b95c27e16c220406b939ed466e0d200299cd829f"
+    },
+    {
+      "id": "SYN-CRD-006",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-006.png",
+      "role": "train",
+      "originalSha256": "55f2aa96aa2f4ac00d3b1837da69d909a2209eec763481b57b99b312e7323551",
+      "displaySha256": "eb2a7ddf49d030316991853524524c7088d3f2528c61538697d7075d9c209c18"
+    },
+    {
+      "id": "SYN-CRD-007",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-007.png",
+      "role": "train",
+      "originalSha256": "e4a04f4396864cd133e66b282aca8bf305ab8108a2c9f8b2c61e40a681d2e326",
+      "displaySha256": "fd84c521bbf7e99add54e2c16e46bc0baff5e50afc0335cb44f07fd0460867b4"
+    },
+    {
+      "id": "SYN-CRD-008",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-008.png",
+      "role": "train",
+      "originalSha256": "6b9000d901ac6d3c82d52c6657dc0e283dc1439f06462141363603f375ad3e7a",
+      "displaySha256": "eeaf2f0f263089b05b9cf2cb0919db72a99c34400a6fd99b85b97390db67f4bd"
+    },
+    {
+      "id": "SYN-CRD-009",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-009.png",
+      "role": "test",
+      "originalSha256": "1086f1eee1f27fc6cf6226e3a396869709af4d17adb79d9f23abbbd2684c1e3c",
+      "displaySha256": "cacc66a071fe69df40fd02a7895326dc02a349ce9377fdfaaeda936f068030ac"
+    },
+    {
+      "id": "SYN-CRD-010",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-010.png",
+      "role": "test",
+      "originalSha256": "2f00fd2a3b222a3a3e961d095dc4567031e41fa48381c3886667f3a9762c7b34",
+      "displaySha256": "887c5559209835b6538c85d465c2b92927b1b8bb9d9fffdd32bd0f148a7316fb"
+    }
+  ],
+  "confusion": {
+    "pet": {
+      "pet": 2,
+      "cardboard": 0
+    },
+    "cardboard": {
+      "pet": 0,
+      "cardboard": 2
+    }
+  },
+  "evaluation": [
+    {
+      "id": "SYN-PET-009",
+      "expected": "pet",
+      "category": "pet",
+      "score": 0.976351261138916,
+      "scores": {
+        "pet": 0.976351261138916,
+        "cardboard": 0.023648755624890327
+      },
+      "modelVersion": "ct-mobilenet-4aa1cd74741b"
+    },
+    {
+      "id": "SYN-PET-010",
+      "expected": "pet",
+      "category": "pet",
+      "score": 0.9858585000038147,
+      "scores": {
+        "pet": 0.9858585000038147,
+        "cardboard": 0.01414144691079855
+      },
+      "modelVersion": "ct-mobilenet-4aa1cd74741b"
+    },
+    {
+      "id": "SYN-CRD-009",
+      "expected": "cardboard",
+      "category": "cardboard",
+      "score": 0.9363551139831543,
+      "scores": {
+        "pet": 0.06364485621452332,
+        "cardboard": 0.9363551139831543
+      },
+      "modelVersion": "ct-mobilenet-4aa1cd74741b"
+    },
+    {
+      "id": "SYN-CRD-010",
+      "expected": "cardboard",
+      "category": "cardboard",
+      "score": 0.9403912425041199,
+      "scores": {
+        "pet": 0.05960870534181595,
+        "cardboard": 0.9403912425041199
+      },
+      "modelVersion": "ct-mobilenet-4aa1cd74741b"
+    }
+  ],
+  "limitations": [
+    "Only twenty user-supplied photographs and four held-out images; this is not a broad generalization estimate.",
+    "Sample independence, physical material labels and photo origin are user declarations, not independently verified.",
+    "The classifier only compares PET-bottle and cardboard classes; unrelated objects can receive a misleading high score.",
+    "Model scores are not calibrated probabilities or measured accuracy on real-world deployment.",
+    "Material confirmation, physical weight measurement and sourced carbon factors remain separate requirements."
+  ],
+  "attribution": {
+    "checkpoint": "https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json",
+    "example": "https://github.com/tensorflow/tfjs-examples/tree/master/webcam-transfer-learning",
+    "framework": "TensorFlow.js 4.22.0",
+    "license": "Apache-2.0 (TensorFlow.js / MobileNet checkpoint sources)"
+  }
+}

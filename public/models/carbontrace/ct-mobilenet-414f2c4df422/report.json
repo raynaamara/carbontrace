@@ -1,0 +1,1285 @@
+{
+  "schemaVersion": 2,
+  "version": "ct-mobilenet-414f2c4df422",
+  "trainedAt": "2026-10-25T10:06:25.596Z",
+  "featureSize": 256,
+  "trainIds": [
+    "SYN-PET-001",
+    "SYN-PET-002",
+    "SYN-PET-003",
+    "SYN-PET-004",
+    "SYN-PET-005",
+    "SYN-PET-006",
+    "SYN-PET-007",
+    "SYN-PET-008",
+    "SYN-PET-011",
+    "SYN-PET-012",
+    "SYN-PET-013",
+    "SYN-PET-014",
+    "SYN-PET-015",
+    "SYN-PET-016",
+    "SYN-PET-017",
+    "SYN-PET-018",
+    "SYN-PET-021",
+    "SYN-PET-024",
+    "SYN-PET-025",
+    "SYN-PET-026",
+    "SYN-PET-027",
+    "SYN-PET-029",
+    "SYN-PET-035",
+    "SYN-PET-037",
+    "SYN-PET-038",
+    "SYN-PET-039",
+    "SYN-CRD-001",
+    "SYN-CRD-002",
+    "SYN-CRD-003",
+    "SYN-CRD-004",
+    "SYN-CRD-005",
+    "SYN-CRD-006",
+    "SYN-CRD-007",
+    "SYN-CRD-008",
+    "SYN-CRD-011",
+    "SYN-CRD-012",
+    "SYN-CRD-013",
+    "SYN-CRD-014",
+    "SYN-CRD-015",
+    "SYN-CRD-016",
+    "SYN-CRD-017",
+    "SYN-CRD-018",
+    "SYN-CRD-025",
+    "SYN-CRD-026",
+    "SYN-CRD-027",
+    "SYN-CRD-032",
+    "SYN-CRD-033",
+    "SYN-CRD-035",
+    "SYN-CRD-037",
+    "SYN-CRD-038",
+    "SYN-CRD-039",
+    "SYN-CRD-040"
+  ],
+  "testIds": [
+    "SYN-PET-009",
+    "SYN-PET-010",
+    "SYN-PET-019",
+    "SYN-PET-020",
+    "SYN-PET-022",
+    "SYN-PET-023",
+    "SYN-PET-028",
+    "SYN-PET-030",
+    "SYN-PET-031",
+    "SYN-PET-032",
+    "SYN-PET-033",
+    "SYN-PET-034",
+    "SYN-PET-036",
+    "SYN-PET-040",
+    "SYN-CRD-009",
+    "SYN-CRD-010",
+    "SYN-CRD-019",
+    "SYN-CRD-020",
+    "SYN-CRD-021",
+    "SYN-CRD-022",
+    "SYN-CRD-023",
+    "SYN-CRD-024",
+    "SYN-CRD-028",
+    "SYN-CRD-029",
+    "SYN-CRD-030",
+    "SYN-CRD-031",
+    "SYN-CRD-034",
+    "SYN-CRD-036"
+  ],
+  "correct": 28,
+  "accuracy": 1,
+  "evaluationGroups": {
+    "previous-test": {
+      "ids": [
+        "SYN-PET-009",
+        "SYN-PET-010",
+        "SYN-PET-019",
+        "SYN-PET-020",
+        "SYN-CRD-009",
+        "SYN-CRD-010",
+        "SYN-CRD-019",
+        "SYN-CRD-020"
+      ],
+      "correct": 8,
+      "accuracy": 1
+    },
+    "new-holdout": {
+      "ids": [
+        "SYN-PET-022",
+        "SYN-PET-023",
+        "SYN-PET-028",
+        "SYN-PET-030",
+        "SYN-PET-031",
+        "SYN-PET-032",
+        "SYN-PET-033",
+        "SYN-PET-034",
+        "SYN-PET-036",
+        "SYN-PET-040",
+        "SYN-CRD-021",
+        "SYN-CRD-022",
+        "SYN-CRD-023",
+        "SYN-CRD-024",
+        "SYN-CRD-028",
+        "SYN-CRD-029",
+        "SYN-CRD-030",
+        "SYN-CRD-031",
+        "SYN-CRD-034",
+        "SYN-CRD-036"
+      ],
+      "correct": 20,
+      "accuracy": 1
+    }
+  },
+  "headSha256": "414f2c4df42289af69357d50638b23aec1cc06585e05627693a3ee3e931aff45",
+  "backboneSha256": "476ce0dbdfa7f9872f0dda21479d8d4c8ccb279c6cdba1401b3e51242a0eb767",
+  "sourceDeclaration": "Pengguna menyatakan bahwa 80 gambar adalah foto barang nyata, setiap ID merupakan objek berbeda, dan 40 foto tambahan (021-040 per kelas) tidak mengulang objek dataset sebelumnya maupun satu sama lain.",
+  "independentlyVerified": false,
+  "declaration": {
+    "source": "user-provided-photographs",
+    "statement": "Pengguna menyatakan bahwa 80 gambar adalah foto barang nyata, setiap ID merupakan objek berbeda, dan 40 foto tambahan (021-040 per kelas) tidak mengulang objek dataset sebelumnya maupun satu sama lain.",
+    "independentlyVerified": false,
+    "declaredDate": "2026-10-25"
+  },
+  "datasetSplit": {
+    "seed": 20261025,
+    "method": "Rank new IDs 021-040 within each class by SHA-256 of <seed>:<sample-id>; first 10 train, remaining 10 hold out. Preserve all previous training and test roles.",
+    "newTrainingNumbers": {
+      "pet": [
+        21,
+        24,
+        25,
+        26,
+        27,
+        29,
+        35,
+        37,
+        38,
+        39
+      ],
+      "cardboard": [
+        25,
+        26,
+        27,
+        32,
+        33,
+        35,
+        37,
+        38,
+        39,
+        40
+      ]
+    }
+  },
+  "architecture": "Frozen ImageNet MobileNetV1 0.25 + global average pooling + L2-normalized features + trained two-class softmax head",
+  "preprocessing": "RGB, bilinear 224x224 with aligned corners, pixel / 127.5 - 1, global average pooling, L2 normalization",
+  "training": {
+    "backboneUrl": "https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json",
+    "featureLayer": "conv_pw_13_relu",
+    "imageSize": 224,
+    "epochs": 200,
+    "learningRate": 0.03,
+    "l2": 0.001,
+    "seed": 20261024,
+    "labels": [
+      "pet",
+      "cardboard"
+    ],
+    "trainableParameters": 514,
+    "sourceImages": 52,
+    "augmentedExamples": 208,
+    "variants": [
+      "original",
+      "horizontal flip",
+      "brightness x0.9",
+      "brightness x1.1"
+    ],
+    "shuffle": false,
+    "lastLoss": 0.14180074632167816,
+    "validationSet": "No separate validation set; hyperparameters retained from the previous model, without tuning against either held-out cohort. The previous-test cohort had already been evaluated before this update."
+  },
+  "samples": [
+    {
+      "id": "SYN-PET-001",
+      "material": "pet",
+      "imageFile": "SYN-PET-001.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "93fa2ceb2c927044d854eef4b49c82838c4a6a8f136a135d4537bf0ac6ee2d60",
+      "displaySha256": "9862d0a6512135a228dce832643aa5fd01478df07f2682ed703dcb5b5f2cd97c"
+    },
+    {
+      "id": "SYN-PET-002",
+      "material": "pet",
+      "imageFile": "SYN-PET-002.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "1fcf04af22b67bca568a554f2396089c90c203722748fdcf82cd6fb73196b872",
+      "displaySha256": "56c4448061c5e5ec071c2cfb66fabc1220beacd6a90c12613a6cacadc0330889"
+    },
+    {
+      "id": "SYN-PET-003",
+      "material": "pet",
+      "imageFile": "SYN-PET-003.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "a707dda86e89f5d7a2e3e949b246dc3c928dadb0fa7225aa0e9167aa2d98abf7",
+      "displaySha256": "cbc2043cb0be560234b3c3abc5ba85567a6e3554d503a619a50bcf76cb404059"
+    },
+    {
+      "id": "SYN-PET-004",
+      "material": "pet",
+      "imageFile": "SYN-PET-004.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "6db7c874c096c4fd8bb44684955ee0c2d49f7f59205ac1e8b1ea3fa7413118f7",
+      "displaySha256": "9cab4dc44be979da7d8e8e73dda512f90d239ef2d077a1b231025e07c4e78130"
+    },
+    {
+      "id": "SYN-PET-005",
+      "material": "pet",
+      "imageFile": "SYN-PET-005.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "afcf9bb151b75a169d161d7e6ac9d6c00599c55d2dac793831dcc61c429dd01c",
+      "displaySha256": "410dcbfe30aa403f5acf7913f756fe5d7e3af299d4de8bb9143aef0bd87a37dd"
+    },
+    {
+      "id": "SYN-PET-006",
+      "material": "pet",
+      "imageFile": "SYN-PET-006.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "398d533d07c859804a4a78b602b454bcd60a084d39f06ac085262ce910cc61a4",
+      "displaySha256": "71b97a992023a60efb98a2b00cb96c63a20408a545b0a7637637004ec46c7295"
+    },
+    {
+      "id": "SYN-PET-007",
+      "material": "pet",
+      "imageFile": "SYN-PET-007.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "cd2f4c186c456d4f47bd629322c09a7eb4386da6e9878bb30bc4f14d642fa581",
+      "displaySha256": "0c7dca976ffc17b3d6f9eaad834ba84e890779d2dcf8d094e2221528f8a1f923"
+    },
+    {
+      "id": "SYN-PET-008",
+      "material": "pet",
+      "imageFile": "SYN-PET-008.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "fa2b1721af7b8d29c6773eb68a081a477ddabd4f63ca7ac8489b2308a7917c57",
+      "displaySha256": "86de1ad76d4a1abc24222f34975b78c3ce2c0efa01273115635e192273e843f6"
+    },
+    {
+      "id": "SYN-PET-009",
+      "material": "pet",
+      "imageFile": "SYN-PET-009.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "781d11193547d1dd3e6b9cda5d510b249dc35d0df36dd2c8e17b0c3b7c6d8a3f",
+      "displaySha256": "bb366a7572684ed97132caae0b5cd353e86201f5bdc2b4603862ecd165ba9c81"
+    },
+    {
+      "id": "SYN-PET-010",
+      "material": "pet",
+      "imageFile": "SYN-PET-010.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "961364976bc117719d12351534cb23a73e7eec90ec0455fe243d8f387ad5069f",
+      "displaySha256": "c13f0898228bf72a1a7f9b2246965aa8f3e8c520030a0f3a2c381e56a0b05e78"
+    },
+    {
+      "id": "SYN-PET-011",
+      "material": "pet",
+      "imageFile": "SYN-PET-011.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "81dcbc281d359b3e0ee88e656879156a4fa31154075cccaa4d1b0bfe5a1911c7",
+      "displaySha256": "9f4395096d859de060a600c24de6ac8a829635387409cbee5120627ecdd348b6"
+    },
+    {
+      "id": "SYN-PET-012",
+      "material": "pet",
+      "imageFile": "SYN-PET-012.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "aeb5e42740c033c181fa9ee8a7447cccc6e6e6ec09c79c60a3c6e5538dd566ce",
+      "displaySha256": "f301eb84bac663729b49bc17739dee847f099374ed9e18de3b7bb8546ae73333"
+    },
+    {
+      "id": "SYN-PET-013",
+      "material": "pet",
+      "imageFile": "SYN-PET-013.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "22e94902a5aed444cf3bc5eb6d33b01469e4dfe707590bc59d44c527c6604fe8",
+      "displaySha256": "f07866ea4fcb7f6c8ade2dc4066990b29b2b32a6b3396a29d87c346e2694af63"
+    },
+    {
+      "id": "SYN-PET-014",
+      "material": "pet",
+      "imageFile": "SYN-PET-014.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "cabeef45220ad124d8f3b572a9183c94cde6acfa2e4e584022d2bbdc9685525b",
+      "displaySha256": "1549e3d8607167fdee8ec6a56fe69ef6644e08d50a5047cee0b008f2d5421642"
+    },
+    {
+      "id": "SYN-PET-015",
+      "material": "pet",
+      "imageFile": "SYN-PET-015.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "5c4ce526fecebf5ab76714f051e47e3a5536f7e1ed5671555b404053849a001d",
+      "displaySha256": "37f807cd3c2eb3aa9d321dd8bade2b1e7570162db68c2934cf9a1e95ed72cdf8"
+    },
+    {
+      "id": "SYN-PET-016",
+      "material": "pet",
+      "imageFile": "SYN-PET-016.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "7e99833695533e290dcd4b51fc66771e10fbd50c26a495340ded9ebc42f2a820",
+      "displaySha256": "2da1f7d0653d0660fd256e2218c81f5888a304c73f85b6cfd6435502fc808392"
+    },
+    {
+      "id": "SYN-PET-017",
+      "material": "pet",
+      "imageFile": "SYN-PET-017.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "d9552a2eb5302fdf839f23f1876702fef06a078a9695c9c67a23341816a5c7d0",
+      "displaySha256": "1c8e0ed6653b56715e43d6c09c3c17369866257af10aeb271df37628f99572b2"
+    },
+    {
+      "id": "SYN-PET-018",
+      "material": "pet",
+      "imageFile": "SYN-PET-018.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "1815a2d10827d1338e9f630c6ddd2892a5db0e274c2d36682e1a1d9a35d0af3b",
+      "displaySha256": "7bd6b2aea86de1a2735b6769ca8e376bf1f31c1423f592b8405eba68a2251a52"
+    },
+    {
+      "id": "SYN-PET-019",
+      "material": "pet",
+      "imageFile": "SYN-PET-019.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "ffc346b6b270cdbe8e937ca0f1d1c15ebdb3d2bb1b1cdcb7ce727ea44fae4a7c",
+      "displaySha256": "80bdbd8458378052f387d536d4830f26fd1d186b9d51e1e6aa90c6b30376c6e1"
+    },
+    {
+      "id": "SYN-PET-020",
+      "material": "pet",
+      "imageFile": "SYN-PET-020.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "1b052f989b20c5433b694d6c8e52785e171d7d66e7788cd113b0176a31899462",
+      "displaySha256": "dfb72306534f9dde636bcc89ab7255f83dc48ee8bd9cfdc649cb03054c8c3178"
+    },
+    {
+      "id": "SYN-PET-021",
+      "material": "pet",
+      "imageFile": "SYN-PET-021.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "af2a3fad8d4e6367333c1d3aad5f1a40c37af257a8b6df8f24f272f17cf864d4",
+      "displaySha256": "751bf77261909d88a40c4277871ffca045d1bb65b59bfa4bc22e6b5105c67481"
+    },
+    {
+      "id": "SYN-PET-022",
+      "material": "pet",
+      "imageFile": "SYN-PET-022.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "d1c3dfa64f01b0c7ef7dfc1c7a4bb5c0cdc23644e456a8fd0a5a1f29d4f2c435",
+      "displaySha256": "ff43cb98c43c6297c8e6ff06c5e153d9919fca9c5a20e0605cd253a84dd5d31a"
+    },
+    {
+      "id": "SYN-PET-023",
+      "material": "pet",
+      "imageFile": "SYN-PET-023.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "10b109396217e4a44c76c0d763b58dc6a9073c556005d76078708ef4c9a99071",
+      "displaySha256": "db8145b33ed2668a6ea3216dd4cd3484c538fa1774710e065273d6420b092a38"
+    },
+    {
+      "id": "SYN-PET-024",
+      "material": "pet",
+      "imageFile": "SYN-PET-024.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "47dc0262bc775d7d9195aad271bf9769a977e09320cb4381274689f9de477ce7",
+      "displaySha256": "4ef3275ccd5e071312806ca67db98859c0c3dea5623d019ec12b583ba16ecfdc"
+    },
+    {
+      "id": "SYN-PET-025",
+      "material": "pet",
+      "imageFile": "SYN-PET-025.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "f5205717dff14ba1aa09198da32677cddb84d2b4263475fd9793828991064e36",
+      "displaySha256": "3cc91b9cae530e190e7a6faeb4daa5e7f84f5bf8204378e3b99b5f230832e07f"
+    },
+    {
+      "id": "SYN-PET-026",
+      "material": "pet",
+      "imageFile": "SYN-PET-026.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "73455b96dc4cfa42ff2ce868c87eab07f12ed552fb2fbafd932f5ad58c15aa9a",
+      "displaySha256": "060194a5189ff9f602cba5cb268b2059fb38f9fe7096df1c2eb14645b0024743"
+    },
+    {
+      "id": "SYN-PET-027",
+      "material": "pet",
+      "imageFile": "SYN-PET-027.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "242085a406f3d62c80935351de87bcfd44c0d1b27d23e70777382ab7ec54f907",
+      "displaySha256": "dfc4f35db3f145109c2f6b6bce672a49a240d00cd1f3254cbaa65634a22c16ee"
+    },
+    {
+      "id": "SYN-PET-028",
+      "material": "pet",
+      "imageFile": "SYN-PET-028.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "d19413dd1ec2c47545926818935462b6b2f3b6ccaccd1761f77b4a48c9a5b902",
+      "displaySha256": "704687230b993a52654013a63967288444199cbcdf2b10aeb6f55bd339ece252"
+    },
+    {
+      "id": "SYN-PET-029",
+      "material": "pet",
+      "imageFile": "SYN-PET-029.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "76aff44b092ccacfa0a15e9f7b6a670ca0db371ea620ffeed0857510e49df3b1",
+      "displaySha256": "0a94aa45547cb9721ab18372aff7e993c2e1adf8a1b37aabe98c3d1067602b3b"
+    },
+    {
+      "id": "SYN-PET-030",
+      "material": "pet",
+      "imageFile": "SYN-PET-030.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "0eed7f7c5739a494bd8c2bcc0db15a98495d93307899c0d469f1c63d75a4b8d4",
+      "displaySha256": "d871628b8a0399d9b27180cd253e7380edfbc55293c8be72664001c92ff1094d"
+    },
+    {
+      "id": "SYN-PET-031",
+      "material": "pet",
+      "imageFile": "SYN-PET-031.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "02dda6d49c19ce2641b45efc0adfe1598167487091ad312e33e843070ffaaf3e",
+      "displaySha256": "8dc7d4db605f66616efa5d915ae8ccf797807ccca010c716f801faaaba64f8d8"
+    },
+    {
+      "id": "SYN-PET-032",
+      "material": "pet",
+      "imageFile": "SYN-PET-032.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "965916cce258ff584cb989f7a309a3b7e1b04abd14cfdd65a04c8e07ca04765a",
+      "displaySha256": "754adc1b37552f013828b696d767b021609140af60e974d57297720434834a6a"
+    },
+    {
+      "id": "SYN-PET-033",
+      "material": "pet",
+      "imageFile": "SYN-PET-033.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "cb2952ebaf953abdc11521a5aeddd74d777b2318eb76a50af5f3a4acd635d72d",
+      "displaySha256": "612fd436eafe8c6433bf6097fc48bdf65e3e84fffa613b08816b5aa5f575bfe6"
+    },
+    {
+      "id": "SYN-PET-034",
+      "material": "pet",
+      "imageFile": "SYN-PET-034.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "1af5f40d274ed6637c5975bb4245aade77402d81a2e8f1036fed56b54d9c635f",
+      "displaySha256": "7909b09061f94cf5bb0c16133cca2feebfe5bd70bbbca657a89aabc209e1e9d5"
+    },
+    {
+      "id": "SYN-PET-035",
+      "material": "pet",
+      "imageFile": "SYN-PET-035.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "7056fe68523e0cb0a7aedf1002112b6efa93b9448c7ca29effd69034ae0fdb19",
+      "displaySha256": "671880c27c6ba11e066171c06a24f5f797ca475987ea13e73e4881cf24148ad2"
+    },
+    {
+      "id": "SYN-PET-036",
+      "material": "pet",
+      "imageFile": "SYN-PET-036.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "46af60cb496d96f5c80dd80ec35e3dc1c03c0c7b80a92c46597c14122923afae",
+      "displaySha256": "29a262abe1c63df4af8dffdff1699321de4669302033040631dbfdc89a5d3581"
+    },
+    {
+      "id": "SYN-PET-037",
+      "material": "pet",
+      "imageFile": "SYN-PET-037.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "6373c1944c63b7dfa2ddd18997c8de06a82b95e5789d2f51049fe4a2fca02066",
+      "displaySha256": "204deaa6ce4e0b2bcce4ad9d01a37aafac86c2cf0ce582faf2f2cbd613a8a4b0"
+    },
+    {
+      "id": "SYN-PET-038",
+      "material": "pet",
+      "imageFile": "SYN-PET-038.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "43ef6031a3dbe927fde37e8e81075ab481c77ee3dc913bf3b4fd302978d25ba2",
+      "displaySha256": "dd28f5aa8620035d03a387c95e3a42e95cc28738a45d145afee5a023344ae3f6"
+    },
+    {
+      "id": "SYN-PET-039",
+      "material": "pet",
+      "imageFile": "SYN-PET-039.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "74d0e7adc740c939d846a2751957418896fd59733440370215f4bee2c5420519",
+      "displaySha256": "7651e3f69313ebae6390ca21e1b9809ef38409886b41abfeabf054ed003f4204"
+    },
+    {
+      "id": "SYN-PET-040",
+      "material": "pet",
+      "imageFile": "SYN-PET-040.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "70546920e3eeba19895102dbf5d06106f1fac4500015a24b347dca96b20fbe6a",
+      "displaySha256": "2b97fa814da72bba1b956d8f03851a121c46ef4b8394bdb000cf00741fe28c00"
+    },
+    {
+      "id": "SYN-CRD-001",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-001.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "de29410233426571e240a63ca597ad8d1b258807047342e8638415c5c224c690",
+      "displaySha256": "827a7f338b8b75ba49078a60efeaa2963f6c03a7577dd3448d86ecaa9d9ee062"
+    },
+    {
+      "id": "SYN-CRD-002",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-002.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "66c4ecd422fbfdc0f42b03658c89b6143b5964b919947c6f20a5fdf0011da8e5",
+      "displaySha256": "a0e1fd155e9abd937f6eaea8ff403dd447d606f5411af255fc9f05f33ba057ec"
+    },
+    {
+      "id": "SYN-CRD-003",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-003.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "4b43b458f5a484133dfc96ae9668bdbc8a12a428dc3fea4adb9201ebc467f3d4",
+      "displaySha256": "2a3283b64ba29d0739bc1afc92a34ca47bccf60a17818bf88dae7d6f994dfd30"
+    },
+    {
+      "id": "SYN-CRD-004",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-004.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "6955e154b47d6097f7d9a502151487bfb1b9ead842443dfb796c78ca115bb188",
+      "displaySha256": "d653eefcdc92e59633d1b97d413b021fd27a1027cb15f60a52c06572221128ea"
+    },
+    {
+      "id": "SYN-CRD-005",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-005.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "9daaf833fd5bd5637f6261308d1e8a4d3bf1d9b079495a80be96e162a76cd953",
+      "displaySha256": "3f8a4f370675cfdfbbf4acb7b95c27e16c220406b939ed466e0d200299cd829f"
+    },
+    {
+      "id": "SYN-CRD-006",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-006.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "55f2aa96aa2f4ac00d3b1837da69d909a2209eec763481b57b99b312e7323551",
+      "displaySha256": "eb2a7ddf49d030316991853524524c7088d3f2528c61538697d7075d9c209c18"
+    },
+    {
+      "id": "SYN-CRD-007",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-007.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "e4a04f4396864cd133e66b282aca8bf305ab8108a2c9f8b2c61e40a681d2e326",
+      "displaySha256": "fd84c521bbf7e99add54e2c16e46bc0baff5e50afc0335cb44f07fd0460867b4"
+    },
+    {
+      "id": "SYN-CRD-008",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-008.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "6b9000d901ac6d3c82d52c6657dc0e283dc1439f06462141363603f375ad3e7a",
+      "displaySha256": "eeaf2f0f263089b05b9cf2cb0919db72a99c34400a6fd99b85b97390db67f4bd"
+    },
+    {
+      "id": "SYN-CRD-009",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-009.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "1086f1eee1f27fc6cf6226e3a396869709af4d17adb79d9f23abbbd2684c1e3c",
+      "displaySha256": "cacc66a071fe69df40fd02a7895326dc02a349ce9377fdfaaeda936f068030ac"
+    },
+    {
+      "id": "SYN-CRD-010",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-010.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "2f00fd2a3b222a3a3e961d095dc4567031e41fa48381c3886667f3a9762c7b34",
+      "displaySha256": "887c5559209835b6538c85d465c2b92927b1b8bb9d9fffdd32bd0f148a7316fb"
+    },
+    {
+      "id": "SYN-CRD-011",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-011.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "e230bf6b657cedfbef8afe891985811f7d377bdb8d9ef8744dded601dddad2ff",
+      "displaySha256": "d9c065b58ffe6030ba83a77058be84e33e35b9566d24663166cb44d4dae8a497"
+    },
+    {
+      "id": "SYN-CRD-012",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-012.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "d037dcb69077d776b3a677f7be14e3112d7b3af852ce8b009bfdea94935a2d8f",
+      "displaySha256": "2eebae0bdccd913edf64a8dbe16fed3da44296728638fb91e0bab1c2e928473e"
+    },
+    {
+      "id": "SYN-CRD-013",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-013.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "65a612d00c304554a08177866a5bd8b364a0a9c3d60ac78247de073d3ec83945",
+      "displaySha256": "decc7ab80c22fb03a5decbdc4ba86d87a039532e6aef6027fcea5a8da9bc7e69"
+    },
+    {
+      "id": "SYN-CRD-014",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-014.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "88ded7c68221a394ecb5ec8674eedc331880cb6ed768019255e0da7ea3fe1740",
+      "displaySha256": "6d5d9daabdfd79382a95b0374dae00edea9e831cfd4b73f2990c2df2adea72c2"
+    },
+    {
+      "id": "SYN-CRD-015",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-015.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "656e256235b2e3e2fa857cc269f8c49ee71cd640277dabf7471fa388ca070fc5",
+      "displaySha256": "f001623b3ce81000e33ef8f1c7c52b810d62af9adc48b0763770b8a6e22cfa27"
+    },
+    {
+      "id": "SYN-CRD-016",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-016.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "dfeb02e6ccecffdcdbbb27c200ac85fd4b51c166a14068716dcaea9961e7a1cb",
+      "displaySha256": "1848579a08784319179aab418bb536b2971eef29f3e67fd47a5253105a872684"
+    },
+    {
+      "id": "SYN-CRD-017",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-017.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "e05d99823adddf41131686b1d746d3991f30f011f92e0a3cd23c432b4c931373",
+      "displaySha256": "24e84a468486f1f8943badda6d292df731d659f4189cf4f52ac0f2f8f58757fa"
+    },
+    {
+      "id": "SYN-CRD-018",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-018.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "dcf3c6ec3988bbe0624fba310b48c13f89f1396359a7c9a4f80ff03934f0bc59",
+      "displaySha256": "7d0c6d69eab93cf593e6bc299a1b9e0b7e6abd0c9f6c84c8dd9fbd28d0939e54"
+    },
+    {
+      "id": "SYN-CRD-019",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-019.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "0f3bc94d35a19bdc43661e0703a948b84ff31b0d7e3733b8c5e70885e4f3ebe7",
+      "displaySha256": "bad3ec9695e9adbd71fd1ff99fa74ae50e17cebd5e548555a9e84ffc50d7fb58"
+    },
+    {
+      "id": "SYN-CRD-020",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-020.png",
+      "role": "test",
+      "testCohort": "previous-test",
+      "originalSha256": "da22398ac7cf76bece25a4c71fd2f96c2d332fa5bf8d615de956f88837971395",
+      "displaySha256": "a1185a356de0c2b6493e3f0e98a1fc9ecddf1a5d521c244df904021d05025db6"
+    },
+    {
+      "id": "SYN-CRD-021",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-021.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "aaf7e1d94dd80cc8e99872c7a2f49a9b31f1738ee78347cbc3070b640509edb1",
+      "displaySha256": "e0afe1a0d6af4a55407ed459a9ff04ee04506a2c5e03f6083d905921345b1283"
+    },
+    {
+      "id": "SYN-CRD-022",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-022.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "442b273de90981366011e6a3fceddca2a44c9db8e5f679115bae004d8e840280",
+      "displaySha256": "887e3ad9dbb5a18396582e3cd6207d0f58a48f337c141363fc5927a18f17c0c7"
+    },
+    {
+      "id": "SYN-CRD-023",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-023.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "d1dd210428979313f47ec7727d25025d3a738c50caf9c909fe9d1d3c7e6adb26",
+      "displaySha256": "e2890c7aca17832630e7f772853e787dd1a5e307b82a452f0987c3ce28b9c28c"
+    },
+    {
+      "id": "SYN-CRD-024",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-024.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "41bbd069886c226b203b7836698d37a83cccf9cf5915798ef7363b961e999a9b",
+      "displaySha256": "cf78cdd98591671b39cd050cefe41e31ddab7629ed11bceff58d5c4e76ec3c25"
+    },
+    {
+      "id": "SYN-CRD-025",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-025.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "296e94ae99f26bc8f8d2aef8fa3f5dda24f9bf242553b7f26b5fc6fc37d05ba2",
+      "displaySha256": "96240c299fcbe0221c61ee8186231d9e41651c634499103ed23c7b241795ef5d"
+    },
+    {
+      "id": "SYN-CRD-026",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-026.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "f59ba79146ebead3043063cdb3ebfc03e5f8c55c4202d9db1f2ddb6ccb377b36",
+      "displaySha256": "7f31b2d8a7cf29838bd052112a3b6c845602e6956da37428da4caa837fe5b304"
+    },
+    {
+      "id": "SYN-CRD-027",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-027.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "fdb296cd918304da4caa2e907aa08c80cdbbc631622d52efd2db5736decd2673",
+      "displaySha256": "e1417ca35eae8aa3e2ddc8690afb0fb6613c4cad2fdc4406e9efed383170df19"
+    },
+    {
+      "id": "SYN-CRD-028",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-028.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "ea475843051bb1addce8e2d61fe51164024097a0002e9cce0cdf9122c5dde99c",
+      "displaySha256": "6d6f93534f74ee6e4aae45703381f117691b8670b856bc82474ff96d9f6885b9"
+    },
+    {
+      "id": "SYN-CRD-029",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-029.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "6c20e4cfa0172fa27b2b533f04ffbaf5c7ecd7f1d380d1f662597cd792c12840",
+      "displaySha256": "d28fef2ffc41f51fed06d1a00d5c12e9226e0b9e0b3c8bbaf2aa93b584c73a8d"
+    },
+    {
+      "id": "SYN-CRD-030",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-030.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "637741e684505e055ae12fe53af619c6711391f0d842102f87b224ef9b7c00dc",
+      "displaySha256": "39c3b8237e09de561e582ee10856e9c549e2e8f2302a6b42c6774d08233e7e29"
+    },
+    {
+      "id": "SYN-CRD-031",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-031.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "6a1d90cccdb50ce2c1c6880fa33c3dd48af5a877496a1f8076ab8d5cf368b088",
+      "displaySha256": "7001755f8378b21b55000845b84bd9b0c41e0e5bfdc2c5ffefd89588e4033225"
+    },
+    {
+      "id": "SYN-CRD-032",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-032.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "65d92184c8ccd2c5fff271ad93ad046331ef2fbd9108ed0c3d66e199f1331004",
+      "displaySha256": "76de0778ced252550f92cb1955c1b4cc982d402b2943fa4872fc4b1021e2854d"
+    },
+    {
+      "id": "SYN-CRD-033",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-033.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "4cd6316eef1346f8258435c445a1bbaf3bd43bbfa89616ed60fd27cb78a3ba06",
+      "displaySha256": "b53cc5073a54c08d862177e15503397d9ff8e7aa00f784f9bcb86596d6f97403"
+    },
+    {
+      "id": "SYN-CRD-034",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-034.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "b63cf393cec703dbc048d2a2e105db3e71ce43ea410dbf2c24016d61ec413f61",
+      "displaySha256": "29c95f1f791d1c98be3f6ac58af117ffa8a0f6e6f30d82da8b60049798b07a0c"
+    },
+    {
+      "id": "SYN-CRD-035",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-035.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "ad1c424071a2e99cee66890d49483848f9de186b619130eb0fe2ae2d405ed6d2",
+      "displaySha256": "3729fce52a5a3222dc3ca94733a04ff2d325bcf30c948aa5bff2bc63e1e89df8"
+    },
+    {
+      "id": "SYN-CRD-036",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-036.png",
+      "role": "test",
+      "testCohort": "new-holdout",
+      "originalSha256": "406159bae1e8563fec3bf2b5cbc4097f18627f320f8c226514f7f54380d3e1f3",
+      "displaySha256": "2a14db18e098c8c8b05fba6e922146c6bedd1d5fb547f111c14a07a46229326a"
+    },
+    {
+      "id": "SYN-CRD-037",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-037.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "bc318644b92f2db27fb96262743ce6130706fe2a0531fd4c490358ab1dc4463f",
+      "displaySha256": "9ab15c0dfca57c72f3345a66b0d19f45a88a08ce97998ef55d19459c55033a1e"
+    },
+    {
+      "id": "SYN-CRD-038",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-038.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "d9f47d958152a850b6b0effc07c07b9190cfcbb90e382f423426d4ece12f611a",
+      "displaySha256": "f4bcc36197f561a2fbb0ee1a006aed2e936a7816f2e2c01f7fd82dec738e3bfa"
+    },
+    {
+      "id": "SYN-CRD-039",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-039.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "ae4c3e0113f6cfb007cdd03f986401dc0ed4eabe5c0ca0d6e8e317ae5d35fe0e",
+      "displaySha256": "f735da0e2ea3298a8f30330bc50469f912dfe82d20c5f89e9359e9f846f2f696"
+    },
+    {
+      "id": "SYN-CRD-040",
+      "material": "cardboard",
+      "imageFile": "SYN-CRD-040.png",
+      "role": "train",
+      "testCohort": null,
+      "originalSha256": "e90470782274369918258ffa59e2afcc736f3a09c5471735e2e63cf5df73edda",
+      "displaySha256": "1ff59b685c5b2f887fd209a52061d62bd77006dfe65ca9a306b83b96c09e1d1a"
+    }
+  ],
+  "confusion": {
+    "pet": {
+      "pet": 14,
+      "cardboard": 0
+    },
+    "cardboard": {
+      "pet": 0,
+      "cardboard": 14
+    }
+  },
+  "evaluation": [
+    {
+      "id": "SYN-PET-009",
+      "expected": "pet",
+      "testCohort": "previous-test",
+      "category": "pet",
+      "score": 0.9727997779846191,
+      "scores": {
+        "pet": 0.9727997779846191,
+        "cardboard": 0.027200201526284218
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-010",
+      "expected": "pet",
+      "testCohort": "previous-test",
+      "category": "pet",
+      "score": 0.9810181856155396,
+      "scores": {
+        "pet": 0.9810181856155396,
+        "cardboard": 0.018981868401169777
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-019",
+      "expected": "pet",
+      "testCohort": "previous-test",
+      "category": "pet",
+      "score": 0.827301561832428,
+      "scores": {
+        "pet": 0.827301561832428,
+        "cardboard": 0.17269843816757202
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-020",
+      "expected": "pet",
+      "testCohort": "previous-test",
+      "category": "pet",
+      "score": 0.9644358158111572,
+      "scores": {
+        "pet": 0.9644358158111572,
+        "cardboard": 0.03556421026587486
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-022",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.9182479977607727,
+      "scores": {
+        "pet": 0.9182479977607727,
+        "cardboard": 0.08175202459096909
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-023",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.9798872470855713,
+      "scores": {
+        "pet": 0.9798872470855713,
+        "cardboard": 0.02011270634829998
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-028",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.8262487053871155,
+      "scores": {
+        "pet": 0.8262487053871155,
+        "cardboard": 0.17375129461288452
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-030",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.8536758422851562,
+      "scores": {
+        "pet": 0.8536758422851562,
+        "cardboard": 0.14632414281368256
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-031",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.7513331770896912,
+      "scores": {
+        "pet": 0.7513331770896912,
+        "cardboard": 0.24866676330566406
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-032",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.8177990913391113,
+      "scores": {
+        "pet": 0.8177990913391113,
+        "cardboard": 0.1822008490562439
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-033",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.8866764903068542,
+      "scores": {
+        "pet": 0.8866764903068542,
+        "cardboard": 0.11332350969314575
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-034",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.906635046005249,
+      "scores": {
+        "pet": 0.906635046005249,
+        "cardboard": 0.09336499869823456
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-036",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.7835022211074829,
+      "scores": {
+        "pet": 0.7835022211074829,
+        "cardboard": 0.2164977788925171
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-PET-040",
+      "expected": "pet",
+      "testCohort": "new-holdout",
+      "category": "pet",
+      "score": 0.9878009557723999,
+      "scores": {
+        "pet": 0.9878009557723999,
+        "cardboard": 0.01219908520579338
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-009",
+      "expected": "cardboard",
+      "testCohort": "previous-test",
+      "category": "cardboard",
+      "score": 0.9548571109771729,
+      "scores": {
+        "pet": 0.04514286667108536,
+        "cardboard": 0.9548571109771729
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-010",
+      "expected": "cardboard",
+      "testCohort": "previous-test",
+      "category": "cardboard",
+      "score": 0.957966148853302,
+      "scores": {
+        "pet": 0.04203377664089203,
+        "cardboard": 0.957966148853302
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-019",
+      "expected": "cardboard",
+      "testCohort": "previous-test",
+      "category": "cardboard",
+      "score": 0.8669761419296265,
+      "scores": {
+        "pet": 0.13302387297153473,
+        "cardboard": 0.8669761419296265
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-020",
+      "expected": "cardboard",
+      "testCohort": "previous-test",
+      "category": "cardboard",
+      "score": 0.9412670731544495,
+      "scores": {
+        "pet": 0.05873296782374382,
+        "cardboard": 0.9412670731544495
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-021",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.962925374507904,
+      "scores": {
+        "pet": 0.037074606865644455,
+        "cardboard": 0.962925374507904
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-022",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.9789509177207947,
+      "scores": {
+        "pet": 0.021049030125141144,
+        "cardboard": 0.9789509177207947
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-023",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.9738966226577759,
+      "scores": {
+        "pet": 0.026103394106030464,
+        "cardboard": 0.9738966226577759
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-024",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.9606014490127563,
+      "scores": {
+        "pet": 0.03939847648143768,
+        "cardboard": 0.9606014490127563
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-028",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.8741630911827087,
+      "scores": {
+        "pet": 0.12583689391613007,
+        "cardboard": 0.8741630911827087
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-029",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.9654882550239563,
+      "scores": {
+        "pet": 0.034511782228946686,
+        "cardboard": 0.9654882550239563
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-030",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.9362537264823914,
+      "scores": {
+        "pet": 0.06374620646238327,
+        "cardboard": 0.9362537264823914
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-031",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.8298619389533997,
+      "scores": {
+        "pet": 0.17013803124427795,
+        "cardboard": 0.8298619389533997
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-034",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.7661081552505493,
+      "scores": {
+        "pet": 0.2338918000459671,
+        "cardboard": 0.7661081552505493
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    },
+    {
+      "id": "SYN-CRD-036",
+      "expected": "cardboard",
+      "testCohort": "new-holdout",
+      "category": "cardboard",
+      "score": 0.8931980729103088,
+      "scores": {
+        "pet": 0.10680194199085236,
+        "cardboard": 0.8931980729103088
+      },
+      "modelVersion": "ct-mobilenet-414f2c4df422"
+    }
+  ],
+  "limitations": [
+    "Only eighty user-supplied photographs, with twenty newly held-out images and eight previously evaluated test images; this is not a broad generalization estimate.",
+    "Previous-test results are regression checks, not eight additional previously unseen test objects.",
+    "Sample independence, physical material labels and photo origin are user declarations, not independently verified.",
+    "The classifier only compares PET-bottle and cardboard classes; unrelated objects can receive a misleading high score.",
+    "Model scores are not calibrated probabilities or measured accuracy on real-world deployment.",
+    "Material confirmation, physical weight measurement and sourced carbon factors remain separate requirements."
+  ],
+  "attribution": {
+    "checkpoint": "https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json",
+    "example": "https://github.com/tensorflow/tfjs-examples/tree/master/webcam-transfer-learning",
+    "framework": "TensorFlow.js 4.22.0",
+    "license": "Apache-2.0 (TensorFlow.js / MobileNet checkpoint sources)"
+  }
+}

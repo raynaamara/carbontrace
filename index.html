@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="id" data-theme="green">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#214e3f" />
+    <meta name="description" data-i18n-content="appDescription" content="CarbonTrace: AI lokal untuk PET, kardus, dan papan gipsum, konfirmasi material, berat manual, serta faktor emisi bersumber." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title data-i18n="appTitle">CarbonTrace | Pencatatan Material</title>
+  </head>
+  <body>
+    <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 16C3 7 10 3 20 4c1 10-5 17-13 14l-3 3m3-5L16 8" /></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M8 3H4v4m12-4h4v4M4 17v4h4m12-4v4h-4M3 12h18"/><rect x="8" y="7" width="8" height="10" rx="2"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-4v6l4 2"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1Zm0 0v15"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="m10 4-8 14a2 2 0 0 0 2 3h16a2 2 0 0 0 2-3L14 4a2 2 0 0 0-4 0Z"/><path d="M12 9v4m0 4h.01"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m3 7 9-4 9 4v10l-9 4-9-4Zm0 0 9 5 9-5m-9 5v9M8 5l9 5"/></symbol>
+      <symbol id="i-scale" viewBox="0 0 24 24"><path d="M5 3h14l2 18H3Zm4 4h6l-1 5h-4Zm3 0 2-2"/></symbol>
+    </svg>
+    <a class="skip-link" href="#main" data-i18n="skipNav">Lewati navigasi</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navigasi utama" data-i18n-aria="navAria">
+        <a class="brand" href="#overview" aria-label="CarbonTrace, ringkasan" data-i18n-aria="brandAria"><span class="brand-mark"><svg class="icon"><use href="#i-leaf"/></svg></span><span>CarbonTrace<span class="brand-caption">MATERIAL INTELLIGENCE</span></span></a>
+        <p class="nav-label" data-i18n="navLabel">RUANG KERJA</p>
+        <nav class="navigation">
+          <a href="#overview" class="nav-link active"><svg class="icon"><use href="#i-grid"/></svg><span data-i18n="navOverview">Ringkasan</span></a>
+          <a href="#workspace" class="nav-link"><svg class="icon"><use href="#i-scan"/></svg><span data-i18n="navRecord">Catat material</span></a>
+          <a href="#records" class="nav-link"><svg class="icon"><use href="#i-history"/></svg><span data-i18n="navHistory">Jejak material</span></a>
+          <a href="#factor-settings" class="nav-link"><svg class="icon"><use href="#i-leaf"/></svg><span data-i18n="navFactors">Faktor &amp; sumber</span></a>
+          <a href="#methodology" class="nav-link"><svg class="icon"><use href="#i-book"/></svg><span data-i18n="navMethod">Metode &amp; batasan</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="research-note"><span class="eyebrow" data-i18n="sidebarEyebrow">ANALISIS DI PERANGKAT</span><h2 data-i18n-html="sidebarTitle">Kenali material.<br />Telusuri sumber.</h2><p data-i18n="sidebarPrivacy">Foto dianalisis di browser dengan model lokal. Tidak ada foto yang dikirim ke layanan AI eksternal.</p><span class="phase-label"><span class="status-dot"></span><span data-i18n="sidebarReview">Peninjauan pengguna tetap diperlukan</span></span></div>
+          <div class="researcher"><span class="avatar">RA</span><span><strong>Rayna Amara</strong><small data-i18n="learningProject">Proyek pembelajaran</small></span></div>
+        </div>
+      </aside>
+      <main id="main" class="main-content">
+        <header class="topbar"><div class="breadcrumb"><span id="current-view-label">Ringkasan</span><span class="breadcrumb-separator">/</span><strong>CarbonTrace</strong></div><div class="topbar-tools"><div class="preference-controls"><div class="preference-control"><label for="language-select">Bahasa / Language</label><select id="language-select"><option value="id">Bahasa Indonesia</option><option value="en">English</option></select></div><div class="preference-control"><label for="theme-select" data-i18n="themeLabel">Warna tema</label><select id="theme-select"><option value="green" data-i18n="themeGreen">Hijau</option><option value="blue" data-i18n="themeBlue">Biru</option><option value="purple" data-i18n="themePurple">Ungu</option><option value="teal" data-i18n="themeTeal">Toska</option><option value="orange" data-i18n="themeOrange">Jingga</option></select></div></div><span id="storage-status" class="storage-status"><span class="status-dot"></span><span id="storage-status-text">Penyimpanan lokal</span></span></div></header>
+        <div id="storage-error" class="storage-error" role="alert" hidden><p id="storage-error-text"></p><button id="retry-storage" class="button button-secondary" type="button" data-i18n="retryStorage">Muat ulang penyimpanan</button></div>
+        <div id="photo-error" class="storage-error" role="alert" hidden></div>
+        <section id="overview" class="overview section-anchor app-view" data-view aria-labelledby="page-title">
+          <div class="page-heading"><div><p class="eyebrow" data-i18n="pageEyebrow">CATAT. TINJAU. TELUSURI.</p><h1 id="page-title" data-i18n-html="pageTitle">Jejak material, lebih transparan<span>.</span></h1><p class="page-description" data-i18n="pageDescription">Catat hasil timbang, pilih material, dan simpan dasar perhitungan emisinya.</p></div><div class="heading-actions"><a class="button button-secondary" href="#records"><span data-i18n="overviewHistory">Lihat riwayat &amp; ekspor</span></a></div></div>
+          <section class="overview-intro" aria-labelledby="overview-intro-title">
+            <div class="overview-intro-problem">
+              <h2 id="overview-intro-title" data-i18n="overviewIntroTitle">Ke TPA atau didaur ulang? Bandingkan dengan data.</h2>
+              <p data-i18n="overviewIntroProblem">Cara menangani sampah memengaruhi emisinya. Tanpa catatan material dan berat, kita sulit membandingkan pilihan pengelolaannya.</p>
+            </div>
+            <div class="overview-intro-solution">
+              <p data-i18n="overviewIntroSolution">CarbonTrace memakai AI untuk menyarankan botol PET, kardus, atau papan gipsum berlapis kertas dari foto. Anda memeriksa hasilnya, mencatat hasil timbang, lalu membandingkan estimasi emisi TPA dan daur ulang memakai rujukan yang sesuai. Angka emisi saja bukan rekomendasi penanganan.</p>
+              <div class="overview-intro-actions">
+                <a class="button button-primary" href="#workspace"><svg class="icon" aria-hidden="true"><use href="#i-scan"/></svg><span data-i18n="overviewTryPhoto">Coba dengan satu foto</span></a>
+                <a class="button button-secondary" href="#methodology" data-i18n="overviewSeeHow">Lihat cara kerjanya</a>
+              </div>
+              <p class="overview-intro-hint" data-i18n="overviewPhotoHint">Pilih foto katalog atau unggah foto Anda sendiri.</p>
+            </div>
+          </section>
+          <div class="demo-notice operational-notice" role="note"><svg class="icon"><use href="#i-check"/></svg><p data-i18n-html="notice"><strong>Pencatatan material aktif.</strong> Masukkan berat dari timbangan dan pilih material berdasarkan pemeriksaan Anda. Estimasi CO<sub>2</sub>e hanya dihitung bila faktor beserta sumbernya sudah diisi; hasilnya bukan kredit karbon.</p><span class="demo-tag" data-i18n="localRecords">CATATAN LOKAL</span></div>
+          <section id="usage-flow" class="panel journey-panel usage-flow-panel" aria-labelledby="usage-flow-title">
+            <h2 id="usage-flow-title" data-i18n="overviewNextTitle">Alur penggunaan CarbonTrace</h2>
+            <p data-i18n="overviewNextIntro">Mulai dari foto, periksa material dan berat, lalu tinjau dan simpan catatannya.</p>
+            <ol class="usage-flow" role="list">
+              <li class="usage-flow-step" data-flow-step="1">
+                <div class="usage-flow-card">
+                  <div class="usage-flow-heading"><span class="usage-flow-number" aria-hidden="true">1</span><h3 data-i18n="wizardPhoto">Foto &amp; AI</h3><svg class="icon" aria-hidden="true"><use href="#i-scan"/></svg></div>
+                  <p data-i18n="flowPhotoDescription">Pilih foto dari katalog atau unggah sendiri. Gunakan saran AI bila diperlukan, atau lanjutkan secara manual.</p>
+                  <span class="usage-flow-note" data-i18n="flowAiOptional">AI opsional</span>
+                </div>
+                <svg class="icon usage-flow-connector" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </li>
+              <li class="usage-flow-step" data-flow-step="2">
+                <div class="usage-flow-card">
+                  <div class="usage-flow-heading"><span class="usage-flow-number" aria-hidden="true">2</span><h3 data-i18n="wizardDetails">Material &amp; berat</h3><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></div>
+                  <p data-i18n="flowDetailsDescription">Periksa material pada kemasan fisik, lalu masukkan hasil timbang dalam gram.</p>
+                  <span class="usage-flow-note" data-i18n="fieldRequired">Wajib</span>
+                </div>
+                <svg class="icon usage-flow-connector" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </li>
+              <li class="usage-flow-step" data-flow-step="3">
+                <div class="usage-flow-card">
+                  <div class="usage-flow-heading"><span class="usage-flow-number" aria-hidden="true">3</span><h3 data-i18n="wizardEstimate">Tinjau estimasi</h3><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></div>
+                  <p data-i18n="flowEstimateDescription">Tinjau sumber dan perbandingan emisi. Tanpa faktor yang sesuai, lanjutkan pencatatan tanpa angka CO2e.</p>
+                  <span class="usage-flow-note" data-i18n="flowEstimateOptional">Estimasi opsional</span>
+                </div>
+                <svg class="icon usage-flow-connector" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </li>
+              <li class="usage-flow-step" data-flow-step="4">
+                <div class="usage-flow-card">
+                  <div class="usage-flow-heading"><span class="usage-flow-number" aria-hidden="true">4</span><h3 data-i18n="wizardSave">Simpan</h3><svg class="icon" aria-hidden="true"><use href="#i-history"/></svg></div>
+                  <p data-i18n="flowSaveDescription">Tekan Simpan, lalu buka Riwayat untuk meninjau catatan atau mengekspor data CSV.</p>
+                  <span class="usage-flow-note" data-i18n="flowLocalStorage">Di browser ini</span>
+                </div>
+              </li>
+            </ol>
+            <div class="usage-flow-parameters">
+              <div><h3 data-i18n="overviewParametersTitle">Estimasi karbon bersifat opsional</h3><p data-i18n="overviewParametersHint"></p><p id="overview-parameter-note" class="field-hint"></p></div>
+              <a class="text-button" href="#factor-settings" data-i18n="overviewOpenParameters">Atur parameter emisi</a>
+            </div>
+          </section>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span data-i18n="recordsLabel">Catatan material</span><span class="stat-icon"><svg class="icon"><use href="#i-box"/></svg></span></div><p class="stat-value"><span id="stat-count">0</span><small data-i18n="samplesUnit">sampel</small></p><p class="stat-caption" id="stat-confirmed">Catatan manual, terpisah dari arsip</p></article>
+            <article class="stat-card"><div class="stat-top"><span data-i18n="massLabel">Massa tercatat</span><span class="stat-icon"><svg class="icon"><use href="#i-scale"/></svg></span></div><p class="stat-value"><span id="stat-weight">0,000</span><small>kg</small></p><p class="stat-caption" data-i18n="userWeight">Berat dilaporkan pengguna</p></article>
+            <article class="stat-card stat-card-highlight"><div class="stat-top"><span data-i18n="differenceLabel">Selisih skenario</span><span class="stat-icon"><svg class="icon"><use href="#i-leaf"/></svg></span></div><p class="stat-value"><span id="stat-impact">--</span><small>kg CO<sub>2</sub>e</small></p><p class="stat-caption" id="stat-impact-caption">Faktor bersumber belum diatur</p></article>
+            <article class="stat-card"><div class="stat-top"><span data-i18n="pendingLabel">Belum dihitung</span><span class="stat-icon stat-icon-amber"><svg class="icon"><use href="#i-book"/></svg></span></div><p class="stat-value"><span id="stat-pending">0</span><small data-i18n="recordsUnit">catatan</small></p><p class="stat-caption" data-i18n="completeFactors">Lengkapi faktor dan simpan ulang catatan</p></article>
+          </div>
+            <section class="panel breakdown-panel" aria-labelledby="breakdown-title">
+              <div class="panel-heading compact"><div><p class="eyebrow" data-i18n="massBreakdownEyebrow">KOMPOSISI MASSA</p><h2 id="breakdown-title" data-i18n="massBreakdownTitle">Menurut material</h2></div><span class="unit-label">kg</span></div>
+              <div class="breakdown-item"><div><span><i class="legend-dot pet-dot"></i><span data-i18n="pet">Botol PET</span></span><strong id="pet-mass">0,000</strong></div><div class="breakdown-track"><span id="pet-bar" class="pet-bar"></span></div><small id="pet-count">0 catatan</small></div>
+              <div class="breakdown-item"><div><span><i class="legend-dot cardboard-dot"></i><span data-i18n="cardboard">Kardus</span></span><strong id="cardboard-mass">0,000</strong></div><div class="breakdown-track"><span id="cardboard-bar" class="cardboard-bar"></span></div><small id="cardboard-count">0 catatan</small></div>
+              <div class="breakdown-item"><div><span><i class="legend-dot drywall-dot"></i><span data-i18n="drywall">Papan gipsum</span></span><strong id="drywall-mass">0,000</strong></div><div class="breakdown-track"><span id="drywall-bar" class="drywall-bar"></span></div><small id="drywall-count">0 catatan</small></div>
+              <p class="field-hint" data-i18n="confirmedOnly"></p>
+            </section>
+        </section>
+
+          <section id="workspace" class="panel analysis-panel section-anchor app-view view-panel" data-view aria-labelledby="analysis-title" hidden>
+            <div class="panel-heading"><div><p class="eyebrow" data-i18n="analysisEyebrow">01 / ANALISIS &amp; PENCATATAN</p><h2 id="analysis-title" data-i18n="analysisTitle">Mulai dari satu sampel</h2></div><span class="badge badge-green" data-i18n="aiReview">AI + peninjauan</span></div>
+            <div class="workflow-heading"><p id="workflow-step-count" aria-live="polite"></p><span id="workflow-draft-status" class="badge badge-neutral"></span></div>
+            <ol id="workflow-stepper" class="workflow-stepper" aria-label="Langkah pencatatan material" data-i18n-aria="wizardAria">
+              <li><button type="button" data-workflow-step="1"><span class="workflow-number">1</span><span data-i18n="wizardPhoto">Foto &amp; AI</span></button></li>
+              <li><button type="button" data-workflow-step="2"><span class="workflow-number">2</span><span data-i18n="wizardDetails">Material &amp; berat</span></button></li>
+              <li><button type="button" data-workflow-step="3"><span class="workflow-number">3</span><span data-i18n="wizardEstimate">Tinjau estimasi</span></button></li>
+              <li><button type="button" data-workflow-step="4"><span class="workflow-number">4</span><span data-i18n="wizardSave">Simpan</span></button></li>
+            </ol>
+            <p id="record-save-status" class="field-hint" role="status" hidden></p>
+            <form id="sample-form" novalidate>
+              <section data-record-step="1" class="record-step">
+                <h3 data-i18n="wizardPhotoTitle">1. Pilih foto dan tinjau objeknya</h3><p class="step-intro" data-i18n="wizardPhotoHint"></p>
+                <div class="photo-source-choice" role="group" aria-label="Sumber foto" data-i18n-aria="photoSourceChoice"><button id="choose-catalog-source" type="button" class="button button-secondary" aria-pressed="true" data-i18n="catalogPhotoChoice">Pilih dari katalog</button><button id="choose-upload-source" type="button" class="button button-secondary" aria-pressed="false" data-i18n="uploadPhotoChoice">Unggah foto sendiri</button></div>
+                <div class="wizard-photo-grid"><div>
+              <div id="catalog-photo-picker">
+              <label class="field-label" for="sample-select"><span class="field-label-text" data-i18n="chooseSample">Pilih sampel foto</span><span class="field-flag" data-i18n="fieldChoose">Pilih</span></label>
+              <select id="sample-select" name="sample" aria-describedby="sample-description photo-source"></select>
+              </div>
+              <div id="upload-photo-picker" hidden><label class="field-label" for="test-photo"><span class="field-label-text" data-i18n="chooseUploadPhoto">Pilih foto dari perangkat</span><span id="upload-requirement" class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><input id="test-photo" type="file" accept="image/jpeg,image/png,image/webp" aria-required="true" aria-describedby="upload-help upload-file-note upload-error" /><p id="upload-help" class="field-hint" data-i18n="uploadHelp"></p><p id="upload-file-note" class="field-hint" role="status"></p></div>
+              <p id="upload-error" class="field-error" role="alert"></p>
+              <div id="record-photo-preview" class="sample-preview"><img id="sample-image" alt="" width="1024" height="1024" decoding="async" /><span class="preview-label"><span class="status-dot"></span><span data-i18n="userPhoto">Foto pengguna</span></span><span id="preview-id" class="preview-id">CT-007</span></div>
+              <p id="upload-empty" class="upload-empty" data-i18n="uploadChooseFirst" hidden></p>
+              <p id="sample-description" class="sample-description"></p><p id="photo-source" class="field-hint"></p>
+                </div>
+              <div id="ai-status" class="ai-status-panel" data-model-state="loading">
+                <div><h3 class="ai-heading"><span data-i18n="aiLocal">Analisis AI lokal</span><span class="field-flag field-optional" data-i18n="fieldOptional">Opsional</span></h3><span id="ai-badge" class="badge badge-neutral">Memuat model</span></div>
+                <p id="ai-description">Menyiapkan model terlatih pada perangkat ini. Pencatatan manual tetap dapat digunakan.</p>
+                <button id="predict-button" class="button button-primary" type="button" disabled>Analisis foto</button>
+                <button id="retry-ai" class="button button-secondary" type="button" hidden data-i18n="retryAi">Muat ulang model</button>
+                <p id="ai-error" class="field-error" role="alert"></p>
+                <div id="ai-result" class="prediction-panel" aria-live="polite" hidden>
+                  <div class="prediction-heading"><span class="eyebrow" data-i18n="aiSuggestion">SARAN MODEL</span><span id="ai-score" class="prediction-score"></span></div>
+                  <div class="prediction-category"><svg class="icon"><use href="#i-box"/></svg><strong id="ai-category"></strong></div>
+                  <div class="confidence-track"><span id="ai-confidence-bar"></span></div>
+                  <p id="ai-result-caption" class="field-hint"></p>
+                  <p class="field-hint" data-i18n="aiCaution">AI hanya membandingkan botol PET, kardus, dan papan gipsum berlapis kertas. Skor menunjukkan seberapa kuat AI memilih kategori untuk foto ini. Hasil bisa keliru meskipun skornya tinggi, terutama untuk bahan lain. Periksa bahan pada benda sebelum menyimpan; papan semen bukan drywall.</p>
+                  <button id="use-ai-suggestion" class="button button-secondary" type="button" data-i18n="useAi">Gunakan saran setelah diperiksa</button>
+                  <button id="clear-ai-result" class="text-button" type="button" data-i18n="clearAi">Catat tanpa hasil AI</button>
+                </div>
+              </div>
+                </div>
+              </section>
+              <section data-record-step="2" class="record-step" hidden>
+                <h3 data-i18n="wizardDetailsTitle">2. Konfirmasikan material dan hasil timbang</h3><p class="step-intro" data-i18n="wizardDetailsHint"></p>
+                <p id="step-ai-note" class="review-note"></p>
+              <label class="field-label confirmation-label" for="category-confirmation"><span class="field-label-text" data-i18n="checkedMaterial">Material hasil pemeriksaan</span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label>
+              <select id="category-confirmation" aria-required="true"><option value="" data-i18n="chooseCheckedMaterial">Pilih berdasarkan pemeriksaan bahan</option><option value="pet" data-i18n="pet">Botol PET</option><option value="cardboard" data-i18n="cardboard">Kardus</option><option value="drywall" data-i18n="drywall">Papan gipsum</option></select>
+              <p class="field-hint" data-i18n="confirmMaterialHint"></p>
+              <div class="form-two-columns">
+                <div><label class="field-label" for="sample-id"><span class="field-label-text" data-i18n="sampleIdLabel">ID sampel</span><span class="field-flag field-automatic" data-i18n="fieldAutomatic">Otomatis</span></label><input id="sample-id" readonly /><p class="field-hint" data-i18n="sameIdHint">ID yang sama memperbarui catatan.</p></div>
+                <div><label class="field-label" for="weight-input"><span class="field-label-text" data-i18n-html="manualWeightLabel">Berat manual <span>(gram)</span></span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><input id="weight-input" type="text" inputmode="decimal" autocomplete="off" placeholder="Isi dari hasil timbangan" data-i18n-placeholder="weightPlaceholder" aria-required="true" aria-describedby="weight-hint weight-error" /><p id="weight-hint" class="field-hint" data-i18n="weightHint">Tanpa nilai bawaan. Desimal: 24,5 atau 24.5.</p><p id="weight-error" class="field-error"></p></div>
+              </div>
+              </section>
+              <section data-record-step="3" class="record-step" hidden>
+                <h3 data-i18n="wizardEstimateTitle">3. Periksa estimasi dan sumbernya</h3><p class="step-intro" data-i18n="wizardEstimateHint"></p>
+                <label class="estimate-choice"><input id="estimate-enabled" type="checkbox" checked /><span data-i18n="estimateEnabledLabel">Hitung estimasi emisi untuk catatan ini</span></label>
+                <p class="field-hint" data-i18n="estimateChoiceHint">Opsional. Matikan untuk menyimpan material dan berat tanpa estimasi; pengaturan faktor tidak dihapus.</p>
+                <div class="review-parameter"><div><span data-i18n="wizardParameterLabel"></span><strong id="review-parameter-name"></strong><p id="record-parameter-note" class="field-hint"></p></div><button id="review-parameters-button" type="button" class="button button-secondary" data-i18n="wizardParameterAction">Pilih / ubah parameter</button></div>
+              <div class="scenario-outputs" aria-label="Rincian dua skenario" data-i18n-aria="scenarioAria">
+                <article><span id="preview-baseline-name">Skenario awal</span><strong><output id="baseline-impact">--</output></strong><small>kg CO<sub>2</sub>e <span data-i18n="netModelUnit">neto menurut model</span></small></article>
+                <article><span id="preview-alternative-name">Skenario alternatif</span><strong><output id="alternative-impact">--</output></strong><small>kg CO<sub>2</sub>e <span data-i18n="netModelUnit">neto menurut model</span></small></article>
+              </div>
+              <div class="sample-estimate"><div><span data-i18n="differenceFormulaLabel">Selisih: awal dikurangi alternatif</span><strong><output id="sample-impact">--</output> <small>kg CO<sub>2</sub>e</small></strong></div><span id="estimate-status" class="badge badge-neutral">Faktor belum diatur</span></div>
+              <p id="estimate-note" class="field-hint"></p>
+                <div id="estimate-guidance" class="estimate-guidance" aria-live="polite">
+                  <aside class="estimate-negative" data-estimate-negative aria-labelledby="estimate-negative-title" hidden>
+                    <h4 id="estimate-negative-title" data-i18n="estimateNegativeTitle">Mengapa nilai skenario bisa negatif?</h4>
+                    <p data-i18n="estimateNegativeExplanation">Model dapat menghitung manfaat penggunaan material daur ulang sebagai pengganti bahan baru. Jika manfaat itu melebihi emisi prosesnya, nilai bersih menjadi negatif. Ini bukan pengukuran CO2 yang diserap benda pada foto.</p>
+                  </aside>
+                  <section class="estimate-conclusion" aria-labelledby="estimate-conclusion-title">
+                    <h4 id="estimate-conclusion-title" data-i18n="estimateConclusionTitle">Kesimpulan untuk catatan ini</h4>
+                    <p class="estimate-summary" data-estimate-conclusion></p>
+                    <p><strong data-i18n="estimateActionLabel">Langkah berikutnya:</strong> <span data-estimate-action></span></p>
+                    <p class="estimate-scope" data-i18n="estimateModelScope">Estimasi ini mengikuti model dan rujukan yang dipilih. Ini bukan bukti pengurangan emisi di lapangan atau kredit karbon.</p>
+                  </section>
+                </div>
+              </section>
+              <section data-record-step="4" class="record-step" hidden>
+                <h3 data-i18n="wizardSaveTitle">4. Periksa ringkasan lalu simpan</h3><p id="workflow-save-hint" class="step-intro" data-i18n="wizardSaveHint"></p>
+                <dl class="record-review"><div><dt data-i18n="sampleIdLabel">ID sampel</dt><dd id="review-sample"></dd></div><div><dt data-i18n="reviewPhotoLabel">Foto</dt><dd id="review-photo"></dd></div><div><dt data-i18n="materialColumn">Material</dt><dd id="review-material"></dd></div><div><dt data-i18n="weightColumn">Berat manual</dt><dd id="review-weight"></dd></div><div><dt data-i18n="wizardMethod">Metode pencatatan</dt><dd id="review-method"></dd></div><div><dt data-i18n="wizardParameterLabel"></dt><dd id="review-factor"></dd></div><div><dt data-i18n="differenceLabel">Selisih skenario</dt><dd id="review-impact"></dd></div></dl>
+                <div id="review-estimate-guidance" class="estimate-guidance" aria-live="polite">
+                  <aside class="estimate-negative" data-estimate-negative aria-labelledby="review-negative-title" hidden>
+                    <h4 id="review-negative-title" data-i18n="estimateNegativeTitle">Mengapa nilai skenario bisa negatif?</h4>
+                    <p data-i18n="estimateNegativeExplanation">Model dapat menghitung manfaat penggunaan material daur ulang sebagai pengganti bahan baru. Jika manfaat itu melebihi emisi prosesnya, nilai bersih menjadi negatif. Ini bukan pengukuran CO2 yang diserap benda pada foto.</p>
+                  </aside>
+                  <section class="estimate-conclusion" aria-labelledby="review-conclusion-title">
+                    <h4 id="review-conclusion-title" data-i18n="estimateConclusionTitle">Kesimpulan untuk catatan ini</h4>
+                    <p class="estimate-summary" data-estimate-conclusion></p>
+                    <p><strong data-i18n="estimateActionLabel">Langkah berikutnya:</strong> <span data-estimate-action></span></p>
+                    <p class="estimate-scope" data-i18n="estimateModelScope">Estimasi ini mengikuti model dan rujukan yang dipilih. Ini bukan bukti pengurangan emisi di lapangan atau kredit karbon.</p>
+                  </section>
+                </div>
+                <p id="record-note" class="field-hint record-note"></p>
+                <div id="workflow-success" class="workflow-success" role="status" hidden><h3 data-i18n="wizardSavedTitle">Catatan berhasil disimpan</h3><p id="workflow-saved-message"></p><div class="workflow-success-actions"><a href="#records" class="button button-primary" data-i18n="wizardViewHistory">Lihat catatan tersimpan</a><button id="next-sample-button" type="button" class="button button-secondary" data-i18n="wizardNextSample">Pilih sampel berikutnya</button></div></div>
+              </section>
+              <p id="workflow-error" class="field-error" role="alert"></p><p id="form-error" class="field-error" role="alert"></p>
+              <div class="workflow-actions"><button id="workflow-back" class="button button-secondary" type="button" data-i18n="wizardBack">Kembali</button><button id="workflow-next" class="button button-primary" type="button">Lanjut</button><button id="save-button" class="button button-primary" type="submit" hidden><svg class="icon"><use href="#i-check"/></svg><span id="save-label">Simpan catatan</span></button></div>
+            </form>
+          </section>
+
+            <section id="factor-settings" class="panel scenario-panel section-anchor app-view view-panel" data-view aria-labelledby="scenario-title" hidden>
+              <div class="panel-heading"><div><p class="eyebrow" data-i18n="factorEyebrow">02 / FAKTOR &amp; SUMBER</p><h2 id="scenario-title" data-i18n="factorTitle">Dasar perhitungan emisi</h2></div><span id="factor-status" class="badge badge-neutral">Belum diatur</span></div>
+              <p class="panel-description" data-i18n="factorIntro">Rujukan mengikuti material yang dikonfirmasi. Default hanya mengisi faktor yang belum ada; pilihan tersimpan tetap dipakai. Pilihan baru masih pratinjau sampai diterapkan untuk material ini. Catatan lama tidak diubah.</p>
+              <div id="parameter-return-bar" class="review-note parameter-return" hidden><h3 data-i18n="parameterReturnTitle"></h3><p data-i18n="parameterReturnHint"></p><button id="return-to-review" type="button" class="button button-primary" data-i18n="parameterReturnButton">Kembali ke tinjauan estimasi</button></div>
+              <p id="parameter-material-context" class="review-note" role="status" hidden></p>
+              <div id="parameter-material-picker" class="parameter-material-picker">
+                <label class="field-label" for="factor-material"><span class="field-label-text" data-i18n="factorMaterial">Material untuk pengaturan umum</span><span class="field-flag" data-i18n="fieldChoose">Pilih</span></label><select id="factor-material"><option value="pet" data-i18n="pet">Botol PET</option><option value="cardboard" data-i18n="cardboard">Kardus</option><option value="drywall" data-i18n="drywall">Papan gipsum</option></select>
+              </div>
+              <div class="scenario-explainer">
+                <p class="eyebrow" data-i18n="compareEyebrow">APA YANG DIBANDINGKAN?</p>
+                <div class="scenario-explanation-grid">
+                  <article><span class="scenario-number">1</span><h3 id="scenario-baseline-title">Skenario awal: landfill/TPA</h3><p id="scenario-baseline-explanation">Pada rujukan WARM, material diasumsikan dibuang ke landfill dengan kondisi pengelolaan gas yang ditentukan oleh set.</p></article>
+                  <article><span class="scenario-number">2</span><h3 id="scenario-alternative-title">Skenario alternatif: daur ulang</h3><p id="scenario-alternative-explanation">Massa material yang sama diasumsikan didaur ulang. Faktor neto dapat memasukkan produksi material baru yang dihindari.</p></article>
+                </div>
+                <p id="scenario-context-note" class="field-hint">Perbandingan skenario bukan bukti material sudah dibuang atau didaur ulang. Pada parameter khusus, nama skenario mengikuti isian Anda.</p>
+              </div>
+              <section class="interaction-panel" aria-labelledby="parameter-action-title">
+                <div class="interaction-heading"><h3 id="parameter-action-title" data-i18n="parameterActionTitle">Tindakan Anda</h3><span id="parameter-action-state" class="interaction-status"></span></div>
+                <p class="interaction-help" data-i18n="parameterActionHelp">Daftar hanya memuat rujukan yang mendukung material ini; default di atas dan Parameter khusus di bawah. Terapkan pilihan baru untuk material ini saja. Nilai sendiri dapat diisi pada bagian lanjutan.</p>
+                <label class="field-label" for="parameter-set"><span class="field-label-text" data-i18n="chooseParameter">Pilih parameter set</span><span class="field-flag field-optional" data-i18n="optionalForRecording">Opsional untuk pencatatan</span></label>
+                <select id="parameter-set" aria-describedby="parameter-action-state active-parameter-note parameter-selection-note"></select>
+                <p id="active-parameter-note" class="active-parameter-note" role="status"></p>
+                <p id="parameter-selection-note" class="field-hint"></p>
+                <button id="apply-parameter-set" class="button button-primary apply-parameter-set" type="button" hidden>Terapkan set untuk PET dan kardus</button>
+              </section>
+              <details id="parameter-documentation" class="parameter-documentation">
+                <summary><span data-i18n="parameterDetails">Penjelasan parameter dan rujukan</span><span class="details-toggle" aria-hidden="true"></span></summary>
+                <h3 id="parameter-doc-title"></h3><p id="parameter-doc-summary"></p>
+                <p><strong data-i18n="whenUsedLabel">Kapan digunakan:</strong> <span id="parameter-doc-usage"></span></p>
+                <p><strong data-i18n="assumptionsLabel">Asumsi:</strong> <span id="parameter-doc-assumptions"></span></p>
+                <p id="parameter-values-caption" class="field-label">Faktor rujukan</p>
+                <div class="table-scroll parameter-table-scroll"><table class="parameter-values-table"><caption class="visually-hidden" data-i18n="factorTableCaption">Faktor emisi dalam kg CO2e per kg material. Material di luar cakupan sumber ditandai tidak didukung.</caption><thead><tr><th scope="col" data-i18n="materialColumn">Material</th><th scope="col" data-i18n="baselineColumn">Awal</th><th scope="col" data-i18n="alternativeColumn">Alternatif</th><th scope="col" data-i18n="sourceLocatorColumn">Rujukan angka</th></tr></thead><tbody id="parameter-values"></tbody></table></div>
+                <p id="parameter-unit-note"></p><p id="parameter-location-note" class="parameter-location-note"></p>
+                <ul id="parameter-reference-links"></ul>
+                <p class="parameter-downloads"><a id="parameter-guide-link" download="Parameter-Set-Emisi-CarbonTrace.md" data-i18n="downloadParameter">Unduh panduan parameter</a><a id="parameter-word-link" download="CarbonTrace-Skenario-dan-Panduan-Penggunaan.docx" data-i18n="downloadWord">Unduh panduan Word</a></p>
+              </details>
+              <details id="custom-factor-details" class="custom-factor-details"><summary><span data-i18n="customParametersSummary">Parameter khusus (lanjutan)</span><span class="details-toggle" aria-hidden="true"></span></summary><form id="factor-form" novalidate>
+                <p id="factor-edit-note" class="field-hint"></p>
+                <div class="form-two-columns">
+                  <div><label class="field-label" for="factor-baseline-scenario"><span class="field-label-text" data-i18n="baselineScenarioLabel">Nama skenario awal</span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><input id="factor-baseline-scenario" type="text" placeholder="Sesuai dokumen sumber" data-i18n-placeholder="sourcePlaceholder" aria-required="true" /></div>
+                  <div><label class="field-label" for="factor-alternative-scenario"><span class="field-label-text" data-i18n="alternativeScenarioLabel">Nama skenario alternatif</span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><input id="factor-alternative-scenario" type="text" placeholder="Sesuai dokumen sumber" data-i18n-placeholder="sourcePlaceholder" aria-required="true" /></div>
+                  <div><label class="field-label" for="factor-baseline"><span class="field-label-text" data-i18n="baselineFactorLabel">Faktor awal</span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><input id="factor-baseline" type="text" inputmode="decimal" autocomplete="off" placeholder="kg CO2e/kg material" aria-required="true" /></div>
+                  <div><label class="field-label" for="factor-alternative"><span class="field-label-text" data-i18n="alternativeFactorLabel">Faktor alternatif</span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><input id="factor-alternative" type="text" inputmode="decimal" autocomplete="off" placeholder="kg CO2e/kg material" aria-required="true" /></div>
+                </div>
+                <p class="field-hint" data-i18n-html="factorUnitHelp">Satuan wajib kg CO<sub>2</sub>e/kg material. Nilai neto negatif diperbolehkan jika memang dinyatakan dalam metode sumber.</p>
+                <label class="field-label confirmation-label" for="factor-source-title"><span class="field-label-text" data-i18n="sourceTitleLabel">Dokumen sumber, tahun / versi</span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><input id="factor-source-title" type="text" placeholder="Judul dokumen dan tahun atau versi metode" data-i18n-placeholder="sourceTitlePlaceholder" aria-required="true" />
+                <label class="field-label confirmation-label" for="factor-source-url"><span class="field-label-text" data-i18n="sourceLinkLabel">Tautan sumber</span><span class="field-flag field-optional" data-i18n="fieldOptional">Opsional</span></label><input id="factor-source-url" type="url" placeholder="https://..." />
+                <label class="field-label confirmation-label" for="factor-scope"><span class="field-label-text" data-i18n="scopeLabel">Konteks dan batas perhitungan</span><span class="field-flag field-required" data-i18n="fieldRequired">Wajib</span></label><textarea id="factor-scope" rows="3" placeholder="Wilayah, jenis material, batas sistem, dan asumsi yang berlaku" data-i18n-placeholder="scopePlaceholder" aria-required="true"></textarea>
+                <p id="factor-error" class="field-error" role="alert"></p>
+                <div class="factor-actions"><button id="save-factor" class="button button-primary" type="submit" data-i18n="saveFactors">Simpan faktor</button><button id="clear-factor" class="button button-secondary" type="button" data-i18n="clearFactors">Kosongkan faktor</button></div>
+              </form></details>
+              <p id="factor-current-note" class="field-hint"></p><a id="factor-current-link" class="text-button" target="_blank" rel="noopener noreferrer" hidden><span data-i18n="openSource">Buka dokumen sumber</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+              <div class="formula"><span data-i18n="comparisonFormulaLabel">RUMUS PERBANDINGAN</span><p data-i18n-html="comparisonFormula">massa (kg) &times; (faktor awal &minus; faktor alternatif)</p></div>
+              <p class="scenario-disclaimer" data-i18n="factorDisclaimer">Default WARM Set 1 untuk PET/kardus dan Set 5 untuk drywall memakai asumsi AS, bukan faktor Indonesia. Set 3/4 PLACES hanya PET. Angka landfill drywall lebih rendah bukan anjuran pembuangan; risiko H2S tetap perlu diperhatikan. Penerapan hanya mengganti faktor material ini, tidak menghapus faktor material lain atau snapshot catatan lama.</p>
+            </section>
+        <section id="records" class="panel records-panel section-anchor app-view view-panel" data-view aria-labelledby="records-title" hidden>
+          <div class="panel-heading"><div><p class="eyebrow" data-i18n="historyEyebrow">03 / JEJAK PENCATATAN</p><h2 id="records-title"><span data-i18n="recordsLabel">Catatan material</span> <span id="record-count" class="count-pill">0</span></h2></div><button id="export-button" class="button button-secondary" type="button"><svg class="icon"><use href="#i-download"/></svg><span data-i18n="exportCsv">Ekspor CSV</span></button></div>
+          <p class="history-export-hint" data-i18n="historyExportHint"></p>
+          <div class="record-filters">
+            <div class="record-filter-field record-filter-search"><label class="field-label" for="record-search" data-i18n="searchLabel">Cari ID atau nama sampel</label><div class="search-field"><svg class="icon"><use href="#i-search"/></svg><input id="record-search" type="search" placeholder="Cari ID atau nama sampel..." data-i18n-placeholder="searchPlaceholder" /></div></div>
+            <div class="record-filter-field"><label class="field-label" for="status-filter" data-i18n="filterEstimate">Filter kelengkapan estimasi</label><select id="status-filter"><option value="all" data-i18n="allRecords">Semua catatan</option><option value="estimated" data-i18n="estimatedRecords">Dengan estimasi</option><option value="missing" data-i18n="missingFactors">Faktor belum diatur</option></select></div>
+            <div class="record-filter-field"><label class="field-label" for="material-filter" data-i18n="filterMaterial">Filter material</label><select id="material-filter"><option value="all" data-i18n="allMaterials">Semua material</option><option value="pet" data-i18n="pet">Botol PET</option><option value="cardboard" data-i18n="cardboard">Kardus</option><option value="drywall" data-i18n="drywall">Papan gipsum</option></select></div>
+          </div>
+          <section id="history-insights" class="history-insights" aria-labelledby="history-insights-title">
+            <h3 id="history-insights-title" data-i18n="historyInsightsTitle">Apa yang terlihat dari catatan Anda?</h3>
+            <p id="history-insight-scope" class="history-insight-caption" role="status"></p>
+            <p id="history-insight-empty" hidden></p>
+            <p id="history-insight-error" class="field-error" role="alert" hidden></p>
+            <a id="history-insight-start" class="button button-secondary" href="#workspace" data-i18n="navRecord" hidden>Catat material</a>
+            <div id="history-insight-content" hidden>
+              <div class="history-insight-metrics">
+                <article class="history-insight-metric"><h4 data-i18n="massLabel">Massa tercatat</h4><strong id="history-insight-weight" class="history-insight-value">--</strong><p id="history-insight-count"></p></article>
+                <article class="history-insight-metric"><h4 data-i18n="massBreakdownTitle">Menurut material</h4><ul id="history-insight-materials"></ul></article>
+                <article class="history-insight-metric"><h4 data-i18n="historyFactorLabel">Faktor tersimpan</h4><strong id="history-insight-coverage" class="history-insight-value">--</strong><p id="history-insight-missing-count"></p></article>
+                <article class="history-insight-metric"><h4 data-i18n="historyAiLabel">Hasil AI tersimpan</h4><strong id="history-insight-ai" class="history-insight-value">--</strong><p id="history-insight-ai-note"></p><p class="history-insight-caption" data-i18n="historyAiCaution">Persetujuan atau koreksi pengguna bukan ukuran akurasi model.</p></article>
+              </div>
+              <div class="history-insight-comparison">
+                <h4 data-i18n="historyComparisonTitle">Perbandingan skenario tersimpan</h4>
+                <p id="history-insight-comparison-scope" class="history-insight-caption"></p>
+                <p id="history-insight-basis" class="history-insight-caption" hidden></p>
+                <p id="history-insight-takeaway" class="history-insight-takeaway"></p>
+                <h4 data-i18n="estimateActionLabel">Langkah berikutnya:</h4>
+                <p id="history-insight-action"></p>
+                <button id="history-insight-missing" class="button button-secondary" type="button" data-i18n="historyShowMissing" hidden>Tampilkan catatan tanpa faktor</button>
+              </div>
+              <details id="history-insight-details" class="history-insight-details" hidden>
+                <summary><span id="history-insight-details-label">Rincian menurut rujukan tersimpan</span><span class="details-toggle" aria-hidden="true"></span></summary>
+                <p class="history-insight-caption" data-i18n="historyGroupPolicy">Hasil dipisahkan menurut material dan basis faktor yang tersimpan. Ringkasan ini tidak membuat satu total emisi lintas kelompok.</p>
+                <div id="history-insight-groups" class="history-insight-groups"></div>
+              </details>
+              <p class="history-insight-limit" data-i18n="historyStoredScope">Berat dan material mengikuti isian pengguna. Perbandingan memakai faktor tersimpan, bukan pengaturan terbaru; ini belum membuktikan daur ulang atau pengurangan emisi nyata.</p>
+            </div>
+          </section>
+          <div class="table-scroll"><table><caption class="visually-hidden" data-i18n="recordTableCaption">Catatan berat manual, material pilihan pengguna, dan salinan sumber faktor. Estimasi bukan pengurangan emisi terverifikasi atau kredit karbon.</caption><thead><tr><th scope="col" data-i18n="sampleColumn">Sampel</th><th scope="col" data-i18n="weightColumn">Berat manual</th><th scope="col" data-i18n="materialColumn">Material</th><th scope="col" data-i18n="factorSourceColumn">Sumber faktor</th><th scope="col" data-i18n="differenceLabel">Selisih skenario</th><th scope="col"><span class="visually-hidden" data-i18n="actionsColumn">Tindakan</span></th></tr></thead><tbody id="record-rows"></tbody></table></div>
+          <div id="empty-state" class="empty-state" hidden><svg class="icon"><use href="#i-box"/></svg><h3 id="empty-title">Belum ada catatan material</h3><p id="empty-description">Pilih foto, masukkan hasil timbang, dan tentukan materialnya.</p><button id="clear-filters" type="button" class="button button-secondary" data-i18n="clearFilters">Bersihkan filter</button></div>
+          <div class="table-footer"><span id="filter-count">0 catatan</span><span data-i18n="noVerificationFooter">Saran AI dan konfirmasi tidak sama dengan verifikasi emisi</span></div>
+          <details id="legacy-archive" class="legacy-archive" hidden><summary><span><span data-i18n="archiveLabel">Arsip data contoh</span> <span id="archive-count" class="count-pill">0</span></span><span class="details-toggle" aria-hidden="true"></span></summary><div><p data-i18n="archiveDescription">Catatan versi sebelumnya tetap disimpan sebagai data contoh. Massa, prediksi, skor, serta faktor lamanya tidak menjadi data penggunaan nyata dan tidak masuk ringkasan di atas.</p><ul id="archive-list"></ul><button id="export-archive" class="button button-secondary" type="button"><svg class="icon"><use href="#i-download"/></svg><span data-i18n="exportArchive">Ekspor arsip contoh</span></button></div></details>
+        </section>
+        <section id="methodology" class="panel guide-panel section-anchor app-view view-panel" data-view aria-labelledby="guide-title" hidden>
+          <div class="panel-heading"><div><p class="eyebrow" data-i18n="navMethod">Panduan &amp; uji AI</p><h2 id="guide-title" data-i18n="guideTitle">Panduan &amp; uji AI</h2></div></div>
+          <p class="step-intro" data-i18n="guideIntro"></p>
+          <div class="guide-grid">
+            <section class="guide-card">
+              <div class="guide-card-content"><h3 data-i18n="guideStepsTitle">Cara mencatat material</h3><ol class="journey-list"><li data-i18n="guideStep1"></li><li data-i18n="guideStep2"></li><li data-i18n="guideStep3"></li><li data-i18n="guideStep4"></li></ol></div>
+              <div class="guide-card-actions"><a href="#workspace" class="button button-primary" data-i18n="navRecord">Catat material</a></div>
+            </section>
+            <section class="guide-card ai-test-tools">
+              <div class="guide-card-content"><h3 data-i18n="guideUploadTitle">Gunakan foto sendiri</h3><p class="review-note" data-i18n="guideUploadDisclosure"></p><p id="guide-model-status" class="field-hint"></p><p id="guide-ai-error" class="field-error" role="alert"></p></div>
+              <div class="guide-card-actions"><button id="guide-upload-button" class="button button-primary" type="button" data-i18n="uploadPhotoChoice">Unggah foto sendiri</button><button id="guide-retry-ai" class="button button-secondary" type="button" data-i18n="retryAi" hidden>Muat ulang model</button></div>
+            </section>
+          </div>
+          <section class="guide-model"><h3 data-i18n="guideModelTitle">Dataset dan kemampuan model</h3><details class="model-details"><summary><span data-i18n="modelDetails">Dataset dan hasil uji internal</span><span class="details-toggle" aria-hidden="true"></span></summary><p id="model-summary">Metadata akan ditampilkan setelah model dimuat.</p><p id="model-origin"></p><p data-i18n="smallTestCaution"></p><a href="/models/carbontrace/report.json" target="_blank" rel="noopener noreferrer" data-i18n="modelReport">Lihat laporan pelatihan</a></details></section>
+          <details class="guide-methods"><summary><span data-i18n="guideMethodTitle">Metode, penyimpanan, dan batas klaim</span><span class="details-toggle" aria-hidden="true"></span></summary><div class="methodology-content"><article><h3 data-i18n="methodRecordsTitle">Pencatatan aktif</h3><p data-i18n="methodRecordsBody"></p></article><article><h3 data-i18n="methodModelTitle">Model terlatih</h3><p data-i18n="methodModelBody"></p></article><article><h3 data-i18n="methodClaimsTitle">Batas klaim</h3><p data-i18n="methodClaimsBody"></p></article><article><h3 data-i18n="methodLanguageTitle">Bahasa dan teks sumber</h3><p data-i18n="methodLanguageBody"></p></article></div></details>
+        </section>
+        <footer class="page-footer"><span class="footer-brand"><svg class="icon"><use href="#i-leaf"/></svg>CarbonTrace</span><span><span data-i18n="footerProject">Proyek pembelajaran Rayna Amara</span><span class="footer-divider">/</span><span data-i18n="footerDisclaimer">Catatan bersumber, bukan kredit karbon</span></span></footer>
+      </main>
+    </div>
+    <template id="record-row-template"><tr><td><div class="sample-cell"><img class="record-image" alt="" width="42" height="42" /><div><strong class="record-name"></strong><small class="record-id"></small></div></div></td><td class="record-weight"></td><td><strong class="record-material"></strong><small class="record-method"></small><small class="record-ai" hidden></small></td><td><span class="record-source"></span><small class="record-parameter-set"></small><a class="record-source-link" target="_blank" rel="noopener noreferrer" data-i18n="openSource" hidden>Buka sumber</a></td><td><strong class="record-impact"></strong><small class="record-impact-unit"></small></td><td><div class="row-actions"><button type="button" class="review-record text-button" data-i18n="editRecord">Ubah</button><button type="button" class="delete-record icon-button"><svg class="icon"><use href="#i-trash"/></svg></button></div></td></tr></template>
+    <template id="history-insight-group-template">
+      <article class="history-group">
+        <header class="history-group-header"><h4 class="history-group-title"></h4><p class="history-group-reference"></p><p class="history-group-count"></p></header>
+        <section class="history-group-section"><h5 data-i18n="historyGroupResultLabel">Hasil perbandingan</h5><p class="history-group-result"></p></section>
+        <section class="history-group-section"><h5 data-i18n="historyGroupActionLabel">Langkah berikutnya</h5><div class="history-group-action"></div></section>
+        <section class="history-group-section"><h5 data-i18n="historyGroupScenariosLabel">Skenario yang dibandingkan</h5><dl class="history-group-scenarios"><div><dt data-i18n="baselineName">Skenario awal</dt><dd class="history-group-baseline"></dd></div><div><dt data-i18n="alternativeName">Skenario alternatif</dt><dd class="history-group-alternative"></dd></div></dl></section>
+        <section class="history-group-section history-group-source-section"><h5 data-i18n="historyGroupSourceLabel">Sumber dan asumsi perhitungan</h5><p class="history-group-source"></p><div class="history-group-scope"></div><a class="history-group-link text-button" target="_blank" rel="noopener noreferrer" data-i18n="openSource" hidden>Buka sumber</a></section>
+      </article>
+    </template>
+    <dialog id="confirm-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description"><div class="dialog-icon"><svg class="icon"><use href="#i-alert"/></svg></div><h2 id="dialog-title">Konfirmasi perubahan</h2><p id="dialog-description"></p><div class="dialog-actions"><button id="dialog-cancel" class="button button-secondary" type="button" data-i18n="cancel">Batal</button><button id="dialog-confirm" class="button button-danger" type="button">Lanjutkan</button></div></dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <noscript><div class="noscript-notice">CarbonTrace memerlukan JavaScript untuk pencatatan dan perhitungan. CarbonTrace requires JavaScript for recording and calculations.</div></noscript>
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>
